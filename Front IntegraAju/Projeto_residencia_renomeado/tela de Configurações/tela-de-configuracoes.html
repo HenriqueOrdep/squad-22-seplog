@@ -1,0 +1,555 @@
+<html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - IntegraAju</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+   
+
+<body class="bg-gray-50" id="body">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"></path>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold text-gray-800">IntegraAju</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Início
+                        </a>
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Serviços
+                        </a>
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Agendamentos
+                        </a>
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Documentos
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button type="button" class="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary relative badge">
+                        <span class="sr-only">Ver notificações</span>
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <div class="ml-3 relative">
+                        <div>
+                            <button type="button" class="bg-white flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" id="user-menu-button">
+                                <span class="sr-only">Abrir menu do usuário</span>
+                                <div class="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary" id="mobile-menu-button">
+                        <span class="sr-only">Abrir menu principal</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#" class="bg-white text-gray-500 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
+                    Início
+                </a>
+                <a href="#" class="bg-white text-gray-500 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
+                    Serviços
+                </a>
+                <a href="#" class="bg-white text-gray-500 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
+                    Agendamentos
+                </a>
+                <a href="#" class="bg-white text-gray-500 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
+                    Documentos
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Header -->
+        <div class="mb-8">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-800">Configurações</h1>
+                    <p class="mt-1 text-gray-600">Personalize sua experiência na plataforma IntegraAju</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Settings Content -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Sidebar Navigation -->
+            <div class="md:col-span-1">
+                <div class="bg-white shadow-sm rounded-xl overflow-hidden">
+                    <div class="p-4 border-b border-gray-200">
+                        <div class="flex items-center">
+                            <div class="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-white">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-lg font-medium text-gray-800">Maria Silva</h3>
+                                <p class="text-sm text-gray-500">maria.silva@email.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="p-2">
+                        <a href="#notifications" class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-primary bg-primary bg-opacity-10 mb-1 settings-nav-item">
+                            <i class="fas fa-bell w-5 h-5 mr-2"></i>
+                            <span>Notificações</span>
+                        </a>
+                        <a href="#appearance" class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-600 hover:text-primary hover:bg-primary hover:bg-opacity-10 mb-1 settings-nav-item">
+                            <i class="fas fa-palette w-5 h-5 mr-2"></i>
+                            <span>Aparência e Tema</span>
+                        </a>
+                        <a href="#advanced" class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-600 hover:text-primary hover:bg-primary hover:bg-opacity-10 mb-1 settings-nav-item">
+                            <i class="fas fa-cog w-5 h-5 mr-2"></i>
+                            <span>Ações Avançadas</span>
+                        </a>
+                        <a href="#privacy" class="flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-600 hover:text-primary hover:bg-primary hover:bg-opacity-10 settings-nav-item">
+                            <i class="fas fa-shield-alt w-5 h-5 mr-2"></i>
+                            <span>Privacidade e Segurança</span>
+                        </a>
+                    </nav>
+                </div>
+                
+                <div class="mt-6 bg-white shadow-sm rounded-xl p-4">
+                    <h3 class="text-sm font-medium text-gray-800 mb-3">Precisa de ajuda?</h3>
+                    <p class="text-sm text-gray-600 mb-4">Se você tiver dúvidas sobre suas configurações, entre em contato com nosso suporte.</p>
+                    <a href="#" class="inline-flex items-center text-sm text-primary hover:text-primary-dark">
+                        <i class="fas fa-headset mr-2"></i>
+                        <span>Contatar suporte</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Settings Panels -->
+            <div class="md:col-span-2 space-y-6">
+                <!-- Notification Preferences -->
+                <section id="notifications" class="settings-card bg-white shadow-sm rounded-xl overflow-hidden animate-fadeIn">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center">
+                            <i class="fas fa-bell text-primary mr-3 text-xl"></i>
+                            <h2 class="text-xl font-medium text-gray-800">Preferências de Notificação</h2>
+                        </div>
+                        <p class="mt-1 text-gray-600">Escolha como deseja receber atualizações e lembretes</p>
+                    </div>
+                    <div class="p-6">
+                        <form id="notification-form">
+                            <div class="space-y-4">
+                                <h3 class="text-lg font-medium text-gray-800">Notificações por E-mail</h3>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input id="email-updates" name="email-updates" type="checkbox" class="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded" checked="">
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                        <label for="email-updates" class="font-medium text-gray-700">Atualizações de solicitações</label>
+                                        <p class="text-gray-500">Receba e-mails quando houver atualizações em suas solicitações</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input id="email-reminders" name="email-reminders" type="checkbox" class="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded" checked="">
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                        <label for="email-reminders" class="font-medium text-gray-700">Lembretes de agendamentos</label>
+                                        <p class="text-gray-500">Receba lembretes por e-mail sobre seus agendamentos</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input id="email-news" name="email-news" type="checkbox" class="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded">
+                                    </div>
+                                    <div class="ml-3 text-sm">
+                                        <label for="email-news" class="font-medium text-gray-700">Avisos da prefeitura</label>
+                                        <p class="text-gray-500">Receba informações sobre novos serviços e avisos importantes</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="pt-4 border-t border-gray-200">
+                                    <h3 class="text-lg font-medium text-gray-800">Notificações por SMS</h3>
+                                    
+                                    <div class="mt-4 flex items-start">
+                                        <div class="flex items-center h-5">
+                                            <input id="sms-reminders" name="sms-reminders" type="checkbox" class="focus:ring-primary h-4 w-4 text-primary border-gray-300 rounded">
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <label for="sms-reminders" class="font-medium text-gray-700">Lembretes por SMS</label>
+                                            <p class="text-gray-500">Receba lembretes por SMS sobre seus agendamentos (taxas de operadora podem ser aplicadas)</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-4" id="phone-input-container" style="display: none;">
+                                        <label for="phone" class="block text-sm font-medium text-gray-700">Número de telefone</label>
+                                        <div class="mt-1 flex rounded-md shadow-sm">
+                                            <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                                +55
+                                            </span>
+                                            <input type="tel" name="phone" id="phone" class="focus:ring-primary focus:border-primary flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" placeholder="(99) 99999-9999">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="pt-5">
+                                    <div class="flex justify-end">
+                                        <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                            Salvar preferências
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                
+                <!-- Appearance and Theme -->
+                <section id="appearance" class="settings-card bg-white shadow-sm rounded-xl overflow-hidden animate-fadeIn">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center">
+                            <i class="fas fa-palette text-primary mr-3 text-xl"></i>
+                            <h2 class="text-xl font-medium text-gray-800">Aparência e Tema</h2>
+                        </div>
+                        <p class="mt-1 text-gray-600">Personalize a aparência da plataforma</p>
+                    </div>
+                    <div class="p-6">
+                        <form id="appearance-form">
+                            <div class="space-y-6">
+                                <div>
+                                    <h3 class="text-lg font-medium text-gray-800">Tema</h3>
+                                    <p class="text-sm text-gray-500 mb-4">Escolha entre modo claro ou escuro</p>
+                                    
+                                    <div class="flex space-x-4">
+                                        <div class="theme-option flex flex-col items-center">
+                                            <div class="w-20 h-20 rounded-lg border-2 hover:border-primary cursor-pointer bg-white shadow-sm flex items-center justify-center mb-2 border-primary" data-theme="light" id="light-theme">
+                                                <i class="fas fa-sun text-2xl text-yellow-500"></i>
+                                            </div>
+                                            <span class="text-sm text-gray-700">Claro</span>
+                                        </div>
+                                        
+                                        <div class="theme-option flex flex-col items-center">
+                                            <div class="w-20 h-20 rounded-lg border-2 border-transparent hover:border-primary cursor-pointer bg-gray-800 shadow-sm flex items-center justify-center mb-2" data-theme="dark" id="dark-theme">
+                                                <i class="fas fa-moon text-2xl text-gray-300"></i>
+                                            </div>
+                                            <span class="text-sm text-gray-700">Escuro</span>
+                                        </div>
+                                        
+                                        <div class="theme-option flex flex-col items-center">
+                                            <div class="w-20 h-20 rounded-lg border-2 border-transparent hover:border-primary cursor-pointer bg-gradient-to-br from-white to-gray-800 shadow-sm flex items-center justify-center mb-2" data-theme="system" id="system-theme">
+                                                <i class="fas fa-desktop text-2xl text-blue-500"></i>
+                                            </div>
+                                            <span class="text-sm text-gray-700">Sistema</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="pt-4 border-t border-gray-200">
+                                    <h3 class="text-lg font-medium text-gray-800">Tamanho da fonte</h3>
+                                    <p class="text-sm text-gray-500 mb-4">Ajuste o tamanho do texto para melhor leitura</p>
+                                    
+                                    <div>
+                                        <label for="font-size" class="block text-sm font-medium text-gray-700">Selecione o tamanho</label>
+                                        <select id="font-size" name="font-size" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                                            <option value="small">Pequeno</option>
+                                            <option value="medium" selected="">Médio</option>
+                                            <option value="large">Grande</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="mt-4 p-4 bg-gray-50 rounded-md">
+                                        <h4 class="font-medium text-gray-800 mb-2">Visualização</h4>
+                                        <p class="text-gray-600 font-size-medium" id="font-preview">Este é um exemplo de como o texto ficará com o tamanho selecionado. Ajuste conforme sua preferência para melhor leitura.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="pt-5">
+                                    <div class="flex justify-end">
+                                        <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                            Salvar aparência
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                
+                <!-- Advanced Actions -->
+                <section id="advanced" class="settings-card bg-white shadow-sm rounded-xl overflow-hidden animate-fadeIn">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center">
+                            <i class="fas fa-cog text-primary mr-3 text-xl"></i>
+                            <h2 class="text-xl font-medium text-gray-800">Ações Avançadas</h2>
+                        </div>
+                        <p class="mt-1 text-gray-600">Gerencie configurações avançadas da sua conta</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-800">Desativar conta temporariamente</h3>
+                                <p class="mt-1 text-sm text-gray-600">Ao desativar sua conta, seus dados serão preservados, mas você não receberá notificações e não poderá acessar a plataforma até reativá-la.</p>
+                                <div class="mt-4">
+                                    <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" id="deactivate-account-btn">
+                                        <i class="fas fa-pause mr-2"></i>
+                                        Desativar conta temporariamente
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-6 border-t border-gray-200">
+                                <h3 class="text-lg font-medium text-red-600">Excluir minha conta</h3>
+                                <p class="mt-1 text-sm text-gray-600">Atenção: Esta ação é irreversível. Todos os seus dados pessoais serão excluídos permanentemente.</p>
+                                <div class="mt-4">
+                                    <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" id="delete-account-btn">
+                                        <i class="fas fa-trash-alt mr-2"></i>
+                                        Excluir minha conta
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Privacy and Security -->
+                <section id="privacy" class="settings-card bg-white shadow-sm rounded-xl overflow-hidden animate-fadeIn">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt text-primary mr-3 text-xl"></i>
+                            <h2 class="text-xl font-medium text-gray-800">Privacidade e Segurança</h2>
+                        </div>
+                        <p class="mt-1 text-gray-600">Gerencie suas configurações de privacidade e segurança</p>
+                    </div>
+                    <div class="p-6">
+                        <form id="privacy-form">
+                            <div class="space-y-6">
+                                <div>
+                                    <h3 class="text-lg font-medium text-gray-800">Senha</h3>
+                                    <p class="text-sm text-gray-500 mb-4">Altere sua senha regularmente para manter sua conta segura</p>
+                                    
+                                    <div class="grid grid-cols-1 gap-4">
+                                        <div>
+                                            <label for="current-password" class="block text-sm font-medium text-gray-700">Senha atual</label>
+                                            <input type="password" name="current-password" id="current-password" class="mt-1 focus:ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                        </div>
+                                        
+                                        <div>
+                                            <label for="new-password" class="block text-sm font-medium text-gray-700">Nova senha</label>
+                                            <input type="password" name="new-password" id="new-password" class="mt-1 focus:ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                        </div>
+                                        
+                                        <div>
+                                            <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirmar nova senha</label>
+                                            <input type="password" name="confirm-password" id="confirm-password" class="mt-1 focus:ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="pt-4 border-t border-gray-200">
+                                    <h3 class="text-lg font-medium text-gray-800">Autenticação de dois fatores</h3>
+                                    <p class="text-sm text-gray-500 mb-4">Adicione uma camada extra de segurança à sua conta</p>
+                                    
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-700">Status: <span class="text-red-600">Desativado</span></p>
+                                            <p class="text-sm text-gray-500 mt-1">Recomendamos ativar para maior segurança</p>
+                                        </div>
+                                        <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                            Ativar
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="pt-4 border-t border-gray-200">
+                                    <h3 class="text-lg font-medium text-gray-800">Sessões ativas</h3>
+                                    <p class="text-sm text-gray-500 mb-4">Dispositivos onde sua conta está conectada atualmente</p>
+                                    
+                                    <div class="space-y-3">
+                                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-md">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-laptop text-gray-500 mr-3"></i>
+                                                <div>
+                                                    <p class="text-sm font-medium text-gray-700">Windows - Chrome</p>
+                                                    <p class="text-xs text-gray-500">Aracaju, Brasil • Agora</p>
+                                                </div>
+                                            </div>
+                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                                Atual
+                                            </span>
+                                        </div>
+                                        
+                                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-md">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-mobile-alt text-gray-500 mr-3"></i>
+                                                <div>
+                                                    <p class="text-sm font-medium text-gray-700">iPhone - Safari</p>
+                                                    <p class="text-xs text-gray-500">Aracaju, Brasil • 2 horas atrás</p>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="text-sm text-red-600 hover:text-red-800">
+                                                Encerrar
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-4">
+                                        <button type="button" class="text-sm text-primary hover:text-primary-dark font-medium">
+                                            Encerrar todas as outras sessões
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="pt-5">
+                                    <div class="flex justify-end">
+                                        <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                            Salvar alterações
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex justify-center md:justify-start space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Sobre</span>
+                        Sobre
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Ajuda</span>
+                        Ajuda
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Privacidade</span>
+                        Privacidade
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Termos</span>
+                        Termos
+                    </a>
+                </div>
+                <p class="mt-8 text-center md:mt-0 text-sm text-gray-500">
+                    © 2023 IntegraAju. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Deactivate Account Modal -->
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50 hidden" id="deactivate-modal">
+        <div class="bg-white rounded-xl shadow-xl max-w-md w-full mx-4 animate-fadeIn">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h3 class="text-lg font-medium text-gray-800">Desativar conta temporariamente</h3>
+            </div>
+            <div class="px-6 py-4">
+                <p class="text-gray-600">Tem certeza que deseja desativar sua conta temporariamente? Você poderá reativá-la a qualquer momento fazendo login novamente.</p>
+                <div class="mt-4">
+                    <label for="deactivate-reason" class="block text-sm font-medium text-gray-700">Motivo da desativação (opcional)</label>
+                    <select id="deactivate-reason" name="deactivate-reason" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                        <option value="">Selecione um motivo</option>
+                        <option value="temporary">Ausência temporária</option>
+                        <option value="not-using">Não estou usando o serviço</option>
+                        <option value="too-many-notifications">Muitas notificações</option>
+                        <option value="other">Outro motivo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="px-6 py-4 border-t border-gray-200 flex justify-end space-x-3">
+                <button type="button" class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" id="deactivate-cancel">
+                    Cancelar
+                </button>
+                <button type="button" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" id="deactivate-confirm">
+                    Desativar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Account Modal -->
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50 hidden" id="delete-modal">
+        <div class="bg-white rounded-xl shadow-xl max-w-md w-full mx-4 animate-fadeIn">
+            <div class="px-6 py-4 border-b border-gray-200">
+                <h3 class="text-lg font-medium text-red-600">Excluir minha conta</h3>
+            </div>
+            <div class="px-6 py-4">
+                <div class="flex items-center mb-4 bg-red-50 p-3 rounded-md">
+                    <i class="fas fa-exclamation-triangle text-red-600 mr-3"></i>
+                    <p class="text-sm text-red-600">Esta ação é irreversível. Todos os seus dados serão excluídos permanentemente.</p>
+                </div>
+                <p class="text-gray-600">Para confirmar a exclusão da sua conta, digite "EXCLUIR" no campo abaixo:</p>
+                <div class="mt-4">
+                    <input type="text" id="delete-confirmation" class="mt-1 focus:ring-red-500 focus:border-red-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Digite EXCLUIR">
+                </div>
+                <div class="mt-4">
+                    <label for="delete-reason" class="block text-sm font-medium text-gray-700">Motivo da exclusão (opcional)</label>
+                    <select id="delete-reason" name="delete-reason" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md">
+                        <option value="">Selecione um motivo</option>
+                        <option value="not-useful">Não achei útil</option>
+                        <option value="privacy">Preocupações com privacidade</option>
+                        <option value="difficult">Difícil de usar</option>
+                        <option value="other">Outro motivo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="px-6 py-4 border-t border-gray-200 flex justify-end space-x-3">
+                <button type="button" class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" id="delete-cancel">
+                    Cancelar
+                </button>
+                <button type="button" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 opacity-50 cursor-not-allowed" id="delete-confirm" disabled="">
+                    Excluir permanentemente
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div class="fixed bottom-4 right-4 bg-green-50 border-l-4 border-green-500 p-4 rounded shadow-md hidden" id="success-toast">
+        <div class="flex">
+            <div class="flex-shrink-0">
+                <i class="fas fa-check-circle text-green-500"></i>
+            </div>
+            <div class="ml-3">
+                <p class="text-sm text-green-800" id="toast-message">
+                    Alterações salvas com sucesso!
+                </p>
+            </div>
+            <div class="ml-auto pl-3">
+                <div class="-mx-1.5 -my-1.5">
+                    <button class="inline-flex text-green-500 focus:outline-none focus:text-green-700" id="close-toast">
+                        <span class="sr-only">Fechar</span>
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+<script src="script.js"></script>
+
+</body>
+</html>

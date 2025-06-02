@@ -1,0 +1,353 @@
+<html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntegraAju - Dashboard do Cidadão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+
+<body class="bg-gray-50">
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="sidebar bg-white shadow-lg w-64 fixed h-full">
+            <div class="sidebar-content flex flex-col h-full">
+                <div class="p-4 border-b">
+                    <div class="flex items-center justify-center">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"></path>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <h1 class="ml-2 text-xl font-bold text-gray-800">IntegraAju</h1>
+                    </div>
+                </div>
+                
+                <nav class="flex-1 py-4 overflow-y-auto">
+                    <ul class="px-2 space-y-1">
+                        <li>
+                            <a href="" class="menu-item active flex items-center px-4 py-3 text-gray-700 rounded-lg">
+                                <i class="fas fa-home text-lg"></i>
+                                <span class="menu-text ml-3">Início</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-item flex items-center px-4 py-3 text-gray-700 rounded-lg">
+                                <i class="fas fa-clipboard-list text-lg"></i>
+                                <span class="menu-text ml-3">Serviços</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-item flex items-center px-4 py-3 text-gray-700 rounded-lg">
+                                <i class="fas fa-calendar-alt text-lg"></i>
+                                <span class="menu-text ml-3">Agendamentos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-item flex items-center px-4 py-3 text-gray-700 rounded-lg">
+                                <i class="fas fa-user text-lg"></i>
+                                <span class="menu-text ml-3">Perfil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-item flex items-center px-4 py-3 text-gray-700 rounded-lg">
+                                <i class="fas fa-question-circle text-lg"></i>
+                                <span class="menu-text ml-3">Ajuda</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <div class="p-4 border-t">
+                    <a href="#" class="flex items-center text-gray-700 hover:text-primary">
+                        <i class="fas fa-sign-out-alt text-lg"></i>
+                        <span class="menu-text ml-3">Sair</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content flex-1 p-6 ml-0">
+            <!-- Header -->
+            <header class="mb-6">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <div class="relative">
+                            <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white text-xl font-semibold overflow-hidden">
+                                <svg class="w-full h-full text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="currentColor"></path>
+                                    <path d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+                        </div>
+                        <div class="ml-4">
+                            <h1 class="text-2xl font-bold text-gray-800">Olá, Maria Silva!</h1>
+                            <p class="text-gray-600">Bem-vindo(a) ao seu Dashboard</p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="bg-white p-2 rounded-full shadow hover:shadow-md">
+                            <i class="fas fa-search text-gray-600"></i>
+                        </button>
+                        <button class="bg-white p-2 rounded-full shadow hover:shadow-md relative">
+                            <i class="fas fa-bell text-gray-600"></i>
+                            <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Status Cards -->
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="p-5">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500">Solicitações em andamento</p>
+                                <p class="text-2xl font-bold text-gray-800">3</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-lg card-gradient-1 flex items-center justify-center">
+                                <i class="fas fa-spinner text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="text-xs text-gray-500">Última atualização: hoje</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="p-5">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500">Serviços concluídos</p>
+                                <p class="text-2xl font-bold text-gray-800">12</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-lg card-gradient-2 flex items-center justify-center">
+                                <i class="fas fa-check-circle text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="text-xs text-gray-500">Última atualização: hoje</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="p-5">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500">Agendamentos futuros</p>
+                                <p class="text-2xl font-bold text-gray-800">2</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-lg card-gradient-3 flex items-center justify-center">
+                                <i class="fas fa-calendar text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="text-xs text-gray-500">Próximo: 15/06/2023</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="p-5">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-gray-500">Notificações pendentes</p>
+                                <p class="text-2xl font-bold text-gray-800">5</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-lg card-gradient-4 flex items-center justify-center">
+                                <i class="fas fa-bell text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="text-xs text-gray-500">Última atualização: hoje</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Serviços Recentes -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden mb-6">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-bold text-gray-800">Serviços Recentes</h2>
+                                <button class="text-primary hover:text-primary-dark text-sm font-medium">Ver todos</button>
+                            </div>
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full">
+                                    <thead>
+                                        <tr class="border-b border-gray-200">
+                                            <th class="py-3 px-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Serviço</th>
+                                            <th class="py-3 px-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Data</th>
+                                            <th class="py-3 px-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                            <td class="py-4 px-4 whitespace-nowrap">
+                                                <div class="text-sm font-medium text-gray-900">Alvará de Construção</div>
+                                            </td>
+                                            <td class="py-4 px-4 whitespace-nowrap">
+                                                <div class="text-sm text-gray-500">10/06/2023</div>
+                                            </td>
+                                            <td class="py-4 px-4 whitespace-nowrap">
+                                                <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full status-analise text-yellow-800">Em análise</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                            <td class="py-4 px-4 whitespace-nowrap">
+                                                <div class="text-sm font-medium text-gray-900">Certidão Negativa</div>
+                                            </td>
+                                            <td class="py-4 px-4 whitespace-nowrap">
+                                                <div class="text-sm text-gray-500">05/06/2023</div>
+                                            </td>
+                                            <td class="py-4 px-4 whitespace-nowrap">
+                                                <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full status-concluido text-green-800">Concluído</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-gray-200 hover:bg-gray-50">
+                                            <td class="py-4 px-4 whitespace-nowrap">
+                                                <div class="text-sm font-medium text-gray-900">Licença Ambiental</div>
+                                            </td>
+                                            <td class="py-4 px-4 whitespace-nowrap">
+                                                <div class="text-sm text-gray-500">01/06/2023</div>
+                                            </td>
+                                            <td class="py-4 px-4 whitespace-nowrap">
+                                                <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full status-recusado text-red-800">Recusado</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="hover:bg-gray-50">
+                                            <td class="py-4 px-4 whitespace-nowrap">
+                                                <div class="text-sm font-medium text-gray-900">IPTU - 2ª via</div>
+                                            </td>
+                                            <td class="py-4 px-4 whitespace-nowrap">
+                                                <div class="text-sm text-gray-500">28/05/2023</div>
+                                            </td>
+                                            <td class="py-4 px-4 whitespace-nowrap">
+                                                <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full status-concluido text-green-800">Concluído</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Agenda -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-bold text-gray-800">Agenda</h2>
+                                <button class="text-primary hover:text-primary-dark text-sm font-medium">Ver todos</button>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex items-start p-3 border border-gray-100 rounded-lg hover:bg-gray-50">
+                                    <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-primary-light flex items-center justify-center text-white">
+                                        <i class="fas fa-calendar-day"></i>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <div class="flex justify-between">
+                                            <h3 class="text-sm font-medium text-gray-900">Atendimento - Secretaria de Obras</h3>
+                                            <span class="text-xs text-gray-500">10:00</span>
+                                        </div>
+                                        <p class="text-xs text-gray-500 mt-1">15 de junho de 2023</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start p-3 border border-gray-100 rounded-lg hover:bg-gray-50">
+                                    <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-secondary-light flex items-center justify-center text-white">
+                                        <i class="fas fa-id-card"></i>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <div class="flex justify-between">
+                                            <h3 class="text-sm font-medium text-gray-900">Renovação de Documentos</h3>
+                                            <span class="text-xs text-gray-500">14:30</span>
+                                        </div>
+                                        <p class="text-xs text-gray-500 mt-1">22 de junho de 2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <!-- Dados do Cidadão -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-bold text-gray-800">Dados do Cidadão</h2>
+                                <button class="text-primary hover:text-primary-dark text-sm font-medium flex items-center">
+                                    <i class="fas fa-pen text-xs mr-1"></i> Editar
+                                </button>
+                            </div>
+                            <div class="space-y-3">
+                                <div>
+                                    <p class="text-xs text-gray-500">Nome completo</p>
+                                    <p class="text-sm font-medium text-gray-800">Maria Silva Santos</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500">CPF</p>
+                                    <p class="text-sm font-medium text-gray-800">123.456.789-00</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500">E-mail</p>
+                                    <p class="text-sm font-medium text-gray-800">maria.silva@email.com</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500">Telefone</p>
+                                    <p class="text-sm font-medium text-gray-800">(79) 98765-4321</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Notificações -->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-bold text-gray-800">Notificações</h2>
+                                <button class="text-primary hover:text-primary-dark text-sm font-medium">Ver todas</button>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="p-3 border-l-4 border-primary bg-primary-light bg-opacity-10 rounded-r-lg">
+                                    <div class="flex justify-between">
+                                        <h3 class="text-sm font-medium text-gray-900">Prazo de pagamento IPTU</h3>
+                                        <span class="text-xs text-gray-500">Hoje</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600 mt-1">O prazo para pagamento com desconto termina em 5 dias.</p>
+                                </div>
+                                
+                                <div class="p-3 border-l-4 border-secondary bg-secondary-light bg-opacity-10 rounded-r-lg">
+                                    <div class="flex justify-between">
+                                        <h3 class="text-sm font-medium text-gray-900">Documento disponível</h3>
+                                        <span class="text-xs text-gray-500">Ontem</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600 mt-1">Sua certidão negativa já está disponível para download.</p>
+                                </div>
+                                
+                                <div class="p-3 border-l-4 border-tertiary bg-tertiary-light bg-opacity-10 rounded-r-lg">
+                                    <div class="flex justify-between">
+                                        <h3 class="text-sm font-medium text-gray-900">Manutenção programada</h3>
+                                        <span class="text-xs text-gray-500">3 dias atrás</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600 mt-1">O sistema ficará indisponível no dia 20/06 das 23h às 5h.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    
+<script src="script.js"></script>
+</body>
+</html>

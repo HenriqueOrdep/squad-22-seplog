@@ -1,0 +1,83 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+        }
+        
+        .menu-item.active {
+            background-color: rgba(124, 58, 237, 0.1);
+            color: #7C3AED;
+            border-left: 4px solid #7C3AED;
+        }
+        
+        .menu-item:hover:not(.active) {
+            background-color: rgba(124, 58, 237, 0.05);
+        }
+        
+        .card-gradient-1 {
+            background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%);
+        }
+        
+        .card-gradient-2 {
+            background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+        }
+        
+        .card-gradient-3 {
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+        }
+        
+        .card-gradient-4 {
+            background: linear-gradient(135deg, #A78BFA 0%, #8B5CF6 100%);
+        }
+        
+        .status-analise {
+            background-color: #FCD34D;
+        }
+        
+        .status-concluido {
+            background-color: #34D399;
+        }
+        
+        .status-recusado {
+            background-color: #F87171;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: fixed;
+                bottom: 0;
+                z-index: 50;
+            }
+            
+            .sidebar-content {
+                flex-direction: row;
+                justify-content: space-around;
+                padding: 0.5rem;
+            }
+            
+            .menu-item {
+                border-left: none;
+                padding: 0.5rem;
+                margin: 0;
+                border-radius: 9999px;
+            }
+            
+            .menu-item.active {
+                border-left: none;
+                background-color: rgba(124, 58, 237, 0.2);
+            }
+            
+            .menu-text {
+                display: none;
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding-bottom: 5rem;
+            }
+        }
+    

@@ -1,0 +1,95 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .error-container {
+            min-height: calc(100vh - 80px);
+        }
+        
+        .error-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .error-icon:hover {
+            transform: scale(1.05);
+        }
+        
+        .btn-primary {
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.3);
+        }
+        
+        .btn-secondary {
+            transition: all 0.2s ease;
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-outline {
+            transition: all 0.2s ease;
+        }
+        
+        .btn-outline:hover {
+            transform: translateY(-2px);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .slide-up {
+            animation: slideUp 0.5s ease-out forwards;
+        }
+        
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+        
+        .error-404-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .error-403-icon {
+            animation: pulse-slow 3s ease-in-out infinite;
+        }
+        
+        .error-500-icon {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .error-session-icon {
+            animation: pulse-slow 4s ease-in-out infinite;
+        }
+  

@@ -1,0 +1,523 @@
+<html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Ajuda - IntegraAju</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+   
+
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"></path>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold text-gray-800">IntegraAju</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Início
+                        </a>
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Serviços
+                        </a>
+                        <a href="#" class="border-primary text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Ajuda
+                        </a>
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Contato
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button type="button" class="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                        <span class="sr-only">Ver notificações</span>
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <div class="ml-3 relative">
+                        <div>
+                            <button type="button" class="bg-white flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" id="user-menu-button">
+                                <span class="sr-only">Abrir menu do usuário</span>
+                                <div class="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary" id="mobile-menu-button">
+                        <span class="sr-only">Abrir menu principal</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#" class="bg-white text-gray-500 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
+                    Início
+                </a>
+                <a href="#" class="bg-white text-gray-500 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
+                    Serviços
+                </a>
+                <a href="#" class="bg-primary-light bg-opacity-10 text-primary block pl-3 pr-4 py-2 border-l-4 border-primary text-base font-medium">
+                    Ajuda
+                </a>
+                <a href="#" class="bg-white text-gray-500 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
+                    Contato
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header with Search -->
+    <header class="bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 header-content">
+            <div class="text-center">
+                <h1 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    Central de Ajuda
+                </h1>
+                <p class="mt-3 max-w-md mx-auto text-lg text-white text-opacity-90 sm:text-xl">
+                    Encontre respostas rápidas ou fale conosco
+                </p>
+                <div class="mt-8 max-w-xl mx-auto">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                        <input type="text" class="search-input form-input block w-full pl-10 pr-3 py-3 border-0 rounded-lg shadow-lg focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Como podemos te ajudar?">
+                        <div class="search-suggestions">
+                            <ul class="py-2">
+                                <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-search text-gray-400 mr-2"></i>
+                                        <span>Como criar uma conta?</span>
+                                    </div>
+                                </li>
+                                <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-search text-gray-400 mr-2"></i>
+                                        <span>Esqueci minha senha</span>
+                                    </div>
+                                </li>
+                                <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-search text-gray-400 mr-2"></i>
+                                        <span>Como agendar um serviço?</span>
+                                    </div>
+                                </li>
+                                <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-search text-gray-400 mr-2"></i>
+                                        <span>Documentos necessários</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" fill="#f8fafc" preserveAspectRatio="none">
+                <path d="M0,32L60,42.7C120,53,240,75,360,74.7C480,75,600,53,720,48C840,43,960,53,1080,58.7C1200,64,1320,64,1380,64L1440,64L1440,100L1380,100C1320,100,1200,100,1080,100C960,100,840,100,720,100C600,100,480,100,360,100C240,100,120,100,60,100L0,100Z"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Categories Section -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Categorias</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 categories-grid">
+                <!-- Category 1 -->
+                <div class="category-card bg-white rounded-xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-transform duration-300 cursor-pointer hover:shadow-lg">
+                    <div class="w-16 h-16 rounded-full bg-primary-light bg-opacity-20 flex items-center justify-center mb-4">
+                        <i class="fas fa-user-circle text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800">Conta e Cadastro</h3>
+                </div>
+                
+                <!-- Category 2 -->
+                <div class="category-card bg-white rounded-xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-transform duration-300 cursor-pointer hover:shadow-lg">
+                    <div class="w-16 h-16 rounded-full bg-secondary-light bg-opacity-20 flex items-center justify-center mb-4">
+                        <i class="fas fa-clipboard-list text-2xl text-secondary"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800">Solicitação de Serviços</h3>
+                </div>
+                
+                <!-- Category 3 -->
+                <div class="category-card bg-white rounded-xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-transform duration-300 cursor-pointer hover:shadow-lg">
+                    <div class="w-16 h-16 rounded-full bg-tertiary-light bg-opacity-20 flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar-alt text-2xl text-tertiary"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800">Agendamentos</h3>
+                </div>
+                
+                <!-- Category 4 -->
+                <div class="category-card bg-white rounded-xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-transform duration-300 cursor-pointer hover:shadow-lg">
+                    <div class="w-16 h-16 rounded-full bg-primary-light bg-opacity-20 flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800">Segurança e Acesso</h3>
+                </div>
+                
+                <!-- Category 5 -->
+                <div class="category-card bg-white rounded-xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-transform duration-300 cursor-pointer hover:shadow-lg">
+                    <div class="w-16 h-16 rounded-full bg-secondary-light bg-opacity-20 flex items-center justify-center mb-4">
+                        <i class="fas fa-file-alt text-2xl text-secondary"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800">Documentos</h3>
+                </div>
+                
+                <!-- Category 6 -->
+                <div class="category-card bg-white rounded-xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-transform duration-300 cursor-pointer hover:shadow-lg">
+                    <div class="w-16 h-16 rounded-full bg-tertiary-light bg-opacity-20 flex items-center justify-center mb-4">
+                        <i class="fas fa-building text-2xl text-tertiary"></i>
+                    </div>
+                    <h3 class="font-medium text-gray-800">Contato com a Prefeitura</h3>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Two Column Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column - FAQ -->
+            <div class="lg:col-span-2">
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Perguntas Frequentes</h2>
+                    <div class="space-y-4">
+                        <!-- FAQ Item 1 -->
+                        <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
+                            <button class="faq-question w-full text-left px-6 py-4 focus:outline-none flex justify-between items-center">
+                                <span class="font-medium text-gray-800">Como criar uma conta no IntegraAju?</span>
+                                <i class="fas fa-chevron-down text-gray-500 faq-icon"></i>
+                            </button>
+                            <div class="faq-answer px-6 text-gray-600">
+                                <p>Para criar uma conta no IntegraAju, siga os passos abaixo:</p>
+                                <ol class="list-decimal ml-5 mt-2 space-y-1">
+                                    <li>Acesse a página inicial do IntegraAju</li>
+                                    <li>Clique no botão "Criar Conta" no canto superior direito</li>
+                                    <li>Preencha o formulário com seus dados pessoais</li>
+                                    <li>Confirme seu e-mail através do link que enviaremos</li>
+                                    <li>Complete seu cadastro com informações adicionais</li>
+                                </ol>
+                                <p class="mt-2">Após esses passos, sua conta estará ativa e você poderá acessar todos os serviços disponíveis.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 2 -->
+                        <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
+                            <button class="faq-question w-full text-left px-6 py-4 focus:outline-none flex justify-between items-center">
+                                <span class="font-medium text-gray-800">Como recuperar minha senha?</span>
+                                <i class="fas fa-chevron-down text-gray-500 faq-icon"></i>
+                            </button>
+                            <div class="faq-answer px-6 text-gray-600">
+                                <p>Se você esqueceu sua senha, pode recuperá-la facilmente:</p>
+                                <ol class="list-decimal ml-5 mt-2 space-y-1">
+                                    <li>Na tela de login, clique em "Esqueci minha senha"</li>
+                                    <li>Digite o e-mail cadastrado na sua conta</li>
+                                    <li>Você receberá um link para redefinição de senha</li>
+                                    <li>Clique no link e defina uma nova senha</li>
+                                </ol>
+                                <p class="mt-2">Por segurança, o link de redefinição expira em 24 horas.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 3 -->
+                        <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
+                            <button class="faq-question w-full text-left px-6 py-4 focus:outline-none flex justify-between items-center">
+                                <span class="font-medium text-gray-800">Como agendar um serviço?</span>
+                                <i class="fas fa-chevron-down text-gray-500 faq-icon"></i>
+                            </button>
+                            <div class="faq-answer px-6 text-gray-600">
+                                <p>Para agendar um serviço no IntegraAju:</p>
+                                <ol class="list-decimal ml-5 mt-2 space-y-1">
+                                    <li>Faça login na sua conta</li>
+                                    <li>Acesse a seção "Serviços" no menu principal</li>
+                                    <li>Selecione o serviço desejado</li>
+                                    <li>Escolha a data e horário disponíveis</li>
+                                    <li>Confirme os dados e finalize o agendamento</li>
+                                </ol>
+                                <p class="mt-2">Você receberá uma confirmação por e-mail e poderá acompanhar seu agendamento na seção "Meus Agendamentos".</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 4 -->
+                        <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
+                            <button class="faq-question w-full text-left px-6 py-4 focus:outline-none flex justify-between items-center">
+                                <span class="font-medium text-gray-800">Quais documentos preciso levar para atendimento presencial?</span>
+                                <i class="fas fa-chevron-down text-gray-500 faq-icon"></i>
+                            </button>
+                            <div class="faq-answer px-6 text-gray-600">
+                                <p>Os documentos necessários variam de acordo com o serviço, mas geralmente incluem:</p>
+                                <ul class="list-disc ml-5 mt-2 space-y-1">
+                                    <li>Documento de identidade com foto (RG, CNH)</li>
+                                    <li>CPF</li>
+                                    <li>Comprovante de residência recente (últimos 3 meses)</li>
+                                    <li>Documentos específicos do serviço (informados no momento do agendamento)</li>
+                                </ul>
+                                <p class="mt-2">Recomendamos verificar a lista completa de documentos na confirmação do seu agendamento.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 5 -->
+                        <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
+                            <button class="faq-question w-full text-left px-6 py-4 focus:outline-none flex justify-between items-center">
+                                <span class="font-medium text-gray-800">Como cancelar ou remarcar um agendamento?</span>
+                                <i class="fas fa-chevron-down text-gray-500 faq-icon"></i>
+                            </button>
+                            <div class="faq-answer px-6 text-gray-600">
+                                <p>Para cancelar ou remarcar um agendamento:</p>
+                                <ol class="list-decimal ml-5 mt-2 space-y-1">
+                                    <li>Acesse sua conta no IntegraAju</li>
+                                    <li>Vá para "Meus Agendamentos"</li>
+                                    <li>Localize o agendamento desejado</li>
+                                    <li>Clique em "Cancelar" ou "Remarcar"</li>
+                                    <li>Siga as instruções na tela</li>
+                                </ol>
+                                <p class="mt-2">Importante: Cancelamentos devem ser feitos com pelo menos 24 horas de antecedência.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Feedback Section -->
+                    <div class="mt-8 bg-white rounded-xl shadow-sm p-6">
+                        <h3 class="text-lg font-medium text-gray-800 mb-4">Essa resposta foi útil?</h3>
+                        <div class="flex space-x-4">
+                            <button class="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                <span class="text-xl mr-2">👍</span> Sim, ajudou
+                            </button>
+                            <button class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                <span class="text-xl mr-2">👎</span> Não ajudou
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Recommended Articles -->
+                <section class="mb-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">Artigos Recomendados</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Article 1 -->
+                        <a href="#" class="block bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition-shadow">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-10 h-10 rounded-lg bg-primary-light bg-opacity-20 flex items-center justify-center text-primary">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-800">Guia completo de serviços online</h3>
+                                    <p class="mt-1 text-sm text-gray-600">Aprenda a utilizar todos os recursos digitais disponíveis.</p>
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <!-- Article 2 -->
+                        <a href="#" class="block bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition-shadow">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-10 h-10 rounded-lg bg-secondary-light bg-opacity-20 flex items-center justify-center text-secondary">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-800">Segurança da sua conta</h3>
+                                    <p class="mt-1 text-sm text-gray-600">Dicas para manter seus dados protegidos.</p>
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <!-- Article 3 -->
+                        <a href="#" class="block bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition-shadow">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-10 h-10 rounded-lg bg-tertiary-light bg-opacity-20 flex items-center justify-center text-tertiary">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-800">Agendamentos prioritários</h3>
+                                    <p class="mt-1 text-sm text-gray-600">Saiba quem tem direito e como solicitar.</p>
+                                </div>
+                            </div>
+                        </a>
+                        
+                        <!-- Article 4 -->
+                        <a href="#" class="block bg-white rounded-xl shadow-sm p-5 hover:shadow-md transition-shadow">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-10 h-10 rounded-lg bg-primary-light bg-opacity-20 flex items-center justify-center text-primary">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-medium text-gray-800">Aplicativo IntegraAju</h3>
+                                    <p class="mt-1 text-sm text-gray-600">Como instalar e usar o app em seu celular.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Right Column - Contact Card -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden sticky top-6">
+                    <div class="bg-gradient-to-r from-primary to-secondary px-6 py-4">
+                        <h2 class="text-xl font-bold text-white">Precisa de mais ajuda?</h2>
+                        <p class="text-white text-opacity-90">Estamos aqui para te ajudar</p>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        <!-- Chat Option -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-800">Chat Online</h3>
+                                <p class="mt-1 text-sm text-gray-600">Converse com um atendente em tempo real.</p>
+                                <button class="mt-2 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                                    Iniciar chat
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Email Option -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-800">E-mail</h3>
+                                <p class="mt-1 text-sm text-gray-600">Envie sua dúvida e responderemos em até 24h.</p>
+                                <a href="mailto:suporte@integraaaju.gov.br" class="mt-1 text-blue-600 hover:text-blue-800 block">
+                                    suporte@integraaaju.gov.br
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Phone Option -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-800">Telefone</h3>
+                                <p class="mt-1 text-sm text-gray-600">Atendimento de segunda a sexta, 8h às 17h.</p>
+                                <a href="tel:08007979797" class="mt-1 text-yellow-600 hover:text-yellow-800 block">
+                                    0800 797 9797
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Ticket Option -->
+                        <div class="pt-4 border-t border-gray-200">
+                            <button class="w-full flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                <i class="fas fa-ticket-alt mr-2"></i>
+                                Abrir Chamado
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center">
+                        <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"></path>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold">IntegraAju</span>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-300">
+                        Facilitando o acesso aos serviços públicos para todos os cidadãos.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Serviços</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Agendamentos</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Documentos</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Tributos</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Consultas</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Suporte</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Central de Ajuda</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Contato</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Tutoriais</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Legal</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Termos de Uso</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Privacidade</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Acessibilidade</a></li>
+                        <li><a href="#" class="text-base text-gray-400 hover:text-white">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+                <div class="flex space-x-6 md:order-2">
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <span class="sr-only">Facebook</span>
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <span class="sr-only">Instagram</span>
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <span class="sr-only">Twitter</span>
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <span class="sr-only">YouTube</span>
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                </div>
+                <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
+                    © 2023 IntegraAju. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body></html>
