@@ -6,11 +6,13 @@ import com.integraju.model.Usuario;
 import com.integraju.repository.UsuarioRepository;
 import com.integraju.util.UsuarioConverter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
-
 import java.util.stream.Collectors;
 
 @Service
@@ -35,14 +37,7 @@ public class UsuarioService {
     public UsuarioResponseDTO salvar(UsuarioDTO dto) {
         Usuario usuario = UsuarioConverter.toModel(dto);
         usuario.setSenha(passwordEncoder.encode(dto.getSenha()));
-
-        // Valor padrão para perfil, se não for informado
-        if (dto.getPerfil() == null || dto.getPerfil().isBlank()) {
-            usuario.setPerfil("SOLICITANTE");
-        } else {
-            usuario.setPerfil(dto.getPerfil().toUpperCase());
-        }
-
+        usuario.setPerfil("SOLICITANTE");
         usuario = usuarioRepository.save(usuario);
         return UsuarioConverter.toResponseDTO(usuario);
     }
@@ -65,15 +60,37 @@ public class UsuarioService {
             usuarioExistente.setSenha(passwordEncoder.encode(dto.getSenha()));
         }
 
-        if (dto.getPerfil() != null && !dto.getPerfil().isBlank()) {
-            usuarioExistente.setPerfil(dto.getPerfil().toUpperCase());
-        }
-
         usuarioExistente = usuarioRepository.save(usuarioExistente);
         return UsuarioConverter.toResponseDTO(usuarioExistente);
     }
 
     public void deletar(Integer id) {
         usuarioRepository.deleteById(id);
+    }
+
+    public void autenticarSolicitante(String login, String senha) {
+        Usuario usuario = usuarioRepository.findByEmail(login)
+                .or(() -> usuarioRepository.findByCpfOuCnpj(login))
+                .orElseThrow(() -> new BadCredentialsException("Usuário não encontrado"));
+
+        if (!passwordEncoder.matches(senha, usuario.getSenha())) {
+            throw new BadCredentialsException("Senha inválida");
+        }
+    }
+
+    public String buscarPerfilPorLogin(String login) {
+        return usuarioRepository.findByEmail(login)
+                .or(() -> usuarioRepository.findByCpfOuCnpj(login))
+                .map(Usuario::getPerfil)
+                .orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado para gerar token"));
+    }
+
+    public Usuario buscarPorEmail(String email) {
+        return usuarioRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado"));
+    }
+
+    public Optional<Usuario> buscarEntidadePorId(Integer id) {
+        return usuarioRepository.findById(id);
     }
 }

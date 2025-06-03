@@ -16,7 +16,6 @@ public class UsuarioConverter {
                 .tipoPessoa(dto.getTipoPessoa())
                 .telefone(dto.getTelefone())
                 .senha(dto.getSenha())
-                .perfil(dto.getPerfil())
                 .endereco(dto.getEndereco())
                 .build();
     }
@@ -29,7 +28,6 @@ public class UsuarioConverter {
         response.setCpfOuCnpj(usuario.getCpfOuCnpj());
         response.setTipoPessoa(usuario.getTipoPessoa());
         response.setTelefone(usuario.getTelefone());
-        response.setPerfil(usuario.getPerfil());
         response.setEndereco(usuario.getEndereco());
         return response;
     }

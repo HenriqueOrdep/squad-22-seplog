@@ -86,8 +86,6 @@ public class RequisicaoService {
         requisicaoExistente.setTipoRequisicao(tipo);
         requisicaoExistente.setStatus(StatusRequisicao.PENDENTE);
 
-        // Atualizar formulário - para simplificação, não implementado aqui
-
         return requisicaoRepository.save(requisicaoExistente);
     }
 
@@ -105,6 +103,11 @@ public class RequisicaoService {
                 .orElseThrow(() -> new IllegalArgumentException("Usuário responsável não encontrado"));
 
         StatusRequisicao statusAnterior = requisicao.getStatus();
+
+        if (!statusAnterior.podeTransitarPara(StatusRequisicao.ENCAMINHADA)) {
+            throw new IllegalArgumentException("Transição de status inválida de " + statusAnterior + " para ENCAMINHADA.");
+        }
+
         requisicao.setStatus(StatusRequisicao.ENCAMINHADA);
 
         LogsRequisicao log = LogsRequisicao.builder()
@@ -131,6 +134,11 @@ public class RequisicaoService {
         StatusRequisicao novoStatus = StatusRequisicao.valueOf(dto.getNovoStatus());
 
         StatusRequisicao statusAnterior = requisicao.getStatus();
+
+        if (!statusAnterior.podeTransitarPara(novoStatus)) {
+            throw new IllegalArgumentException("Transição de status inválida de " + statusAnterior + " para " + novoStatus + ".");
+        }
+
         requisicao.setStatus(novoStatus);
 
         LogsRequisicao log = LogsRequisicao.builder()
@@ -146,6 +154,7 @@ public class RequisicaoService {
 
         return requisicaoRepository.save(requisicao);
     }
+
 
     public List<Requisicao> listarPorUsuarioEStatus(Integer usuarioId, StatusRequisicao status) {
         if (status != null) {

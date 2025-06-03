@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "e74f6380-b030-4e88-b5ed-7f6780713630",
+		"name": "Integraju - Usuario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44411383"
+	},
+	"item": [
+		{
+			"name": "Cadastro Cidadão",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Maria Silva\",\r\n  \"email\": \"maria@email.com\",\r\n  \"cpfOuCnpj\": \"12345678901\",\r\n  \"tipoPessoa\": \"FISICA\",\r\n  \"telefone\": \"(79) 99999-9999\",\r\n  \"senha\": \"123456\",\r\n  \"endereco\": {\r\n    \"cep\": \"49000-000\",\r\n    \"logradouro\": \"Rua das Flores\",\r\n    \"numero\": \"123\",\r\n    \"bairro\": \"Centro\",\r\n    \"cidade\": \"Aracaju\",\r\n    \"estado\": \"SE\",\r\n    \"complemento\": \"Casa\"\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/usuarios/cadastro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"usuarios",
+						"cadastro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"login\": \"maria@email.com\",\n  \"senha\": \"123456\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login/usuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login",
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Usuário",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "  Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBzZXBsb2ciLCJyb2xlIjoiQ09PUkRFTkFET1IiLCJpYXQiOjE3NDg5NzIxNDMsImV4cCI6MTc0OTA1ODU0M30.Ydw5yuYHttDoTxgPAjFx6Wc1ZGnyjOOx1lzfYOysiaY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nome\": \"Maria Silva\",\n  \"email\": \"Atualizadomaria@email.com\",\n  \"cpfOuCnpj\": \"12345678901\",\n  \"tipoPessoa\": \"FISICA\",\n  \"telefone\": \"(79) 99999-9999\",\n  \"senha\": \"123456\",\n  \"endereco\": {\n    \"cep\": \"49000-000\",\n    \"logradouro\": \"Rua das Flores\",\n    \"numero\": \"123\",\n    \"bairro\": \"Centro\",\n    \"cidade\": \"Aracaju\",\n    \"uf\": \"SE\",\n    \"complemento\": \"Casa\"\n  }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/usuarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"usuarios",
+						"1"
+					]
+				},
+				"description": "Atualiza um usuário existente pelo UUID. Altere a variável userId para um UUID válido."
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Usuário",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "  Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBzZXBsb2ciLCJyb2xlIjoiQ09PUkRFTkFET1IiLCJpYXQiOjE3NDg5NzIxNDMsImV4cCI6MTc0OTA1ODU0M30.Ydw5yuYHttDoTxgPAjFx6Wc1ZGnyjOOx1lzfYOysiaY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"login\": \"123.456.789-00\",\n    \"senha\": \"your_password\"\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/usuarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"usuarios",
+						"1"
+					]
+				},
+				"description": "Deleta um usuário pelo UUID. Altere a variável userId para um UUID válido."
+			},
+			"response": []
+		}
+	]
+}

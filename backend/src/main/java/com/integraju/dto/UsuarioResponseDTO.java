@@ -3,8 +3,6 @@ package com.integraju.dto;
 import com.integraju.model.Endereco;
 import lombok.Data;
 
-
-
 @Data
 public class UsuarioResponseDTO {
     private Integer id;
@@ -13,6 +11,5 @@ public class UsuarioResponseDTO {
     private String cpfOuCnpj;
     private String tipoPessoa;
     private String telefone;
-    private String perfil;
     private Endereco endereco;
 }

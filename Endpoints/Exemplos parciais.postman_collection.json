@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "ca2f5d35-6593-4224-88cb-5508e4f031b1",
+		"name": "Exemplos parciais",
+		"description": "Example requests for all backend endpoints.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44411383"
+	},
+	"item": [
+		{
+			"name": "Criar Setor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "  Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBzZXBsb2ciLCJyb2xlIjoiQ09PUkRFTkFET1IiLCJpYXQiOjE3NDg5NzUwNDgsImV4cCI6MTc0OTA2MTQ0OH0.73JbPNhZIgdKZcVBWW5sNbtd4f2a3CVNaU7IaXY3IZY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nome\": \"TI\",\n  \"descricao\": \"Tecnologia da Informação\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/setores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"setores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Setor",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "  Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBzZXBsb2ciLCJyb2xlIjoiQ09PUkRFTkFET1IiLCJpYXQiOjE3NDg5NzUwNDgsImV4cCI6MTc0OTA2MTQ0OH0.73JbPNhZIgdKZcVBWW5sNbtd4f2a3CVNaU7IaXY3IZY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nome\": \"TI Atualizado\",\n  \"descricao\": \"Setor de Tecnologia Atualizado\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/setores/52",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"setores",
+						"52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Servicos Setores",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "  Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBzZXBsb2ciLCJyb2xlIjoiQ09PUkRFTkFET1IiLCJpYXQiOjE3NDg5NzUwNDgsImV4cCI6MTc0OTA2MTQ0OH0.73JbPNhZIgdKZcVBWW5sNbtd4f2a3CVNaU7IaXY3IZY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Atendimento Técnico\",\n    \"descricao\": \"Serviço de suporte técnico\",\n    \"setorId\": \"52\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/servicos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"servicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Requisição",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <token>"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"titulo\": \"Solicitação de notebook atualizada\",\n  \"descricao\": \"Atualizando a solicitação para incluir mouse\",\n  \"usuarioId\": \"232f574e-b5be-4e12-9c6f-c819a4a3fc80\",\n  \"tipoRequisicaoId\": \"c98e0d61-7315-488c-80e6-21141b6d69a9\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/requisicoes/<requisicao-uuid>",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"requisicoes",
+						"<requisicao-uuid>"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
