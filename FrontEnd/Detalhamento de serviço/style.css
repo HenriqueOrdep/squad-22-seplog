@@ -1,0 +1,26 @@
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .service-icon {
+            filter: drop-shadow(0 4px 6px rgba(99, 102, 241, 0.2));
+        }
+        .step-item {
+            position: relative;
+        }
+        .step-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 1.65rem;
+            top: 3rem;
+            height: calc(100% - 2rem);
+            width: 2px;
+            background-color: #c7d2fe;
+        }
+        @media (max-width: 768px) {
+            .step-item:not(:last-child):after {
+                left: 1.15rem;
+            }
+        }
+ 

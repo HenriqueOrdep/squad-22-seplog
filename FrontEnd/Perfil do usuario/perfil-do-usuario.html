@@ -1,0 +1,409 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntegraAju - Perfil do Usuário</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="sidebar bg-white shadow-lg w-64 fixed h-full">
+            <div class="sidebar-content flex flex-col h-full">
+                <div class="p-4 border-b">
+                    <div class="flex items-center justify-center">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"></path>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <h1 class="ml-2 text-xl font-bold text-gray-800">IntegraAju</h1>
+                    </div>
+                </div>
+                
+                <nav class="flex-1 py-4 overflow-y-auto">
+                    <ul class="px-2 space-y-1">
+                        <li>
+                            <a href="../Dashboard do cidadão/dashboard-do-cidadao.html" class="menu-item flex items-center px-4 py-3 text-gray-700 rounded-lg">
+                                <i class="fas fa-home text-lg"></i>
+                                <span class="menu-text ml-3">Início</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services-section" class="menu-item flex items-center px-4 py-3 text-gray-700 rounded-lg">
+                                <i class="fas fa-clipboard-list text-lg"></i>
+                                <span class="menu-text ml-3">Serviços</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#appointments-section" class="menu-item flex items-center px-4 py-3 text-gray-700 rounded-lg">
+                                <i class="fas fa-calendar-alt text-lg"></i>
+                                <span class="menu-text ml-3">Agendamentos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#personal-data-section" class="menu-item flex items-center px-4 py-3 text-gray-700 rounded-lg">
+                                <i class="fas fa-user text-lg"></i>
+                                <span class="menu-text ml-3">Perfil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../Central de ajuda/central-de-ajuda.html" class="menu-item flex items-center px-4 py-3 text-gray-700 rounded-lg">
+                                <i class="fas fa-question-circle text-lg"></i>
+                                <span class="menu-text ml-3">Ajuda</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <div class="p-4 border-t">
+                    <a href="#" class="flex items-center text-gray-700 hover:text-primary">
+                        <i class="fas fa-sign-out-alt text-lg"></i>
+                        <span class="menu-text ml-3">Sair</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content flex-1 p-6 ml-64">
+            <!-- Header -->
+            <header class="mb-6">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <div class="relative">
+                            <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white text-xl font-semibold overflow-hidden">
+                                <svg class="w-full h-full text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" fill="currentColor"></path>
+                                    <path d="M12 14C7.58172 14 4 17.5817 4 22H20C20 17.5817 16.4183 14 12 14Z" fill="currentColor"></path>
+                                </svg>
+                            </div>
+                            <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+                        </div>
+                        <div class="ml-4">
+                            <h1 class="text-2xl font-bold text-gray-800">Perfil do Usuário</h1>
+                            <p class="text-gray-600">Gerencie suas informações pessoais</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Profile Sections -->
+            <div class="space-y-6">
+                <!-- Personal Data Section -->
+                <section id="personal-data-section" class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-primary-light bg-opacity-20 flex items-center justify-center text-primary">
+                                <i class="fas fa-user-circle text-xl"></i>
+                            </div>
+                            <h2 class="ml-3 text-xl font-bold text-gray-800">Dados Pessoais</h2>
+                        </div>
+                        
+                        <form id="personal-data-form" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">
+                                        Nome completo / Razão social *
+                                    </label>
+                                    <input type="text" id="fullName" name="fullName" value="Maria Silva Santos" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="document" class="block text-sm font-medium text-gray-700 mb-1">
+                                        CPF / CNPJ *
+                                    </label>
+                                    <div class="relative">
+                                        <input type="text" id="document" name="document" value="123.456.789-00" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100 focus:outline-none" disabled>
+                                        <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                            <i class="fas fa-lock text-gray-400"></i>
+                                        </div>
+                                    </div>
+                                    <p class="mt-1 text-xs text-gray-500">Este campo não pode ser alterado</p>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Tipo de pessoa *</label>
+                                    <div class="flex space-x-4">
+                                        <div class="flex items-center">
+                                            <input type="radio" id="personType1" name="personType" value="fisica" class="h-4 w-4 text-primary" checked>
+                                            <label for="personType1" class="ml-2 text-sm text-gray-700">Pessoa Física</label>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <input type="radio" id="personType2" name="personType" value="juridica" class="h-4 w-4 text-primary">
+                                            <label for="personType2" class="ml-2 text-sm text-gray-700">Pessoa Jurídica</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="occupation" class="block text-sm font-medium text-gray-700 mb-1">
+                                        Função / Cargo
+                                    </label>
+                                    <input type="text" id="occupation" name="occupation" value="Analista Administrativo" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                                        E-mail *
+                                    </label>
+                                    <input type="email" id="email" name="email" value="maria.silva@email.com" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
+                                </div>
+                                
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+                                        Telefone fixo
+                                    </label>
+                                    <input type="tel" id="phone" name="phone" value="(79) 3222-1234" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                                </div>
+                                
+                                <div>
+                                    <label for="mobile" class="block text-sm font-medium text-gray-700 mb-1">
+                                        Celular *
+                                    </label>
+                                    <input type="tel" id="mobile" name="mobile" value="(79) 98765-4321" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-end pt-4 border-t border-gray-100">
+                                <button type="submit" id="savePersonalData" class="hidden px-6 py-2 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                                    <i class="fas fa-save mr-2"></i>
+                                    Salvar alterações
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                
+                <!-- Address Section -->
+                <section id="address-section" class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-secondary-light bg-opacity-20 flex items-center justify-center text-secondary">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <h2 class="ml-3 text-xl font-bold text-gray-800">Endereço</h2>
+                        </div>
+                        
+                        <form id="address-form" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div>
+                                    <label for="zipCode" class="block text-sm font-medium text-gray-700 mb-1">
+                                        CEP *
+                                    </label>
+                                    <div class="flex">
+                                        <input type="text" id="zipCode" name="zipCode" value="49000-000" class="form-input w-full px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none" required>
+                                        <button type="button" id="searchZipCode" class="px-4 bg-secondary hover:bg-secondary-dark text-white font-medium rounded-r-lg transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="street" class="block text-sm font-medium text-gray-700 mb-1">
+                                        Endereço *
+                                    </label>
+                                    <input type="text" id="street" name="street" value="Rua das Flores" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="number" class="block text-sm font-medium text-gray-700 mb-1">
+                                            Número *
+                                        </label>
+                                        <input type="text" id="number" name="number" value="123" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="complement" class="block text-sm font-medium text-gray-700 mb-1">
+                                            Complemento
+                                        </label>
+                                        <input type="text" id="complement" name="complement" value="Apto 101" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="neighborhood" class="block text-sm font-medium text-gray-700 mb-1">
+                                        Bairro *
+                                    </label>
+                                    <input type="text" id="neighborhood" name="neighborhood" value="Centro" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="city" class="block text-sm font-medium text-gray-700 mb-1">
+                                            Cidade *
+                                        </label>
+                                        <input type="text" id="city" name="city" value="Aracaju" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="state" class="block text-sm font-medium text-gray-700 mb-1">
+                                            Estado *
+                                        </label>
+                                        <select id="state" name="state" class="form-select w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
+                                            <option value="">Selecione</option>
+                                            <option value="AC">Acre</option>
+                                            <option value="AL">Alagoas</option>
+                                            <option value="AP">Amapá</option>
+                                            <option value="AM">Amazonas</option>
+                                            <option value="BA">Bahia</option>
+                                            <option value="CE">Ceará</option>
+                                            <option value="DF">Distrito Federal</option>
+                                            <option value="ES">Espírito Santo</option>
+                                            <option value="GO">Goiás</option>
+                                            <option value="MA">Maranhão</option>
+                                            <option value="MT">Mato Grosso</option>
+                                            <option value="MS">Mato Grosso do Sul</option>
+                                            <option value="MG">Minas Gerais</option>
+                                            <option value="PA">Pará</option>
+                                            <option value="PB">Paraíba</option>
+                                            <option value="PR">Paraná</option>
+                                            <option value="PE">Pernambuco</option>
+                                            <option value="PI">Piauí</option>
+                                            <option value="RJ">Rio de Janeiro</option>
+                                            <option value="RN">Rio Grande do Norte</option>
+                                            <option value="RS">Rio Grande do Sul</option>
+                                            <option value="RO">Rondônia</option>
+                                            <option value="RR">Roraima</option>
+                                            <option value="SC">Santa Catarina</option>
+                                            <option value="SP">São Paulo</option>
+                                            <option value="SE" selected>Sergipe</option>
+                                            <option value="TO">Tocantins</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-end pt-4 border-t border-gray-100">
+                                <button type="submit" id="saveAddress" class="px-6 py-2 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                                    <i class="fas fa-save mr-2"></i>
+                                    Salvar endereço
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                
+                <!-- Security Section -->
+                <section id="security-section" class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-tertiary-light bg-opacity-20 flex items-center justify-center text-tertiary">
+                                <i class="fas fa-shield-alt text-xl"></i>
+                            </div>
+                            <h2 class="ml-3 text-xl font-bold text-gray-800">Segurança e Acesso</h2>
+                        </div>
+                        
+                        <form id="security-form" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="currentPassword" class="block text-sm font-medium text-gray-700 mb-1">
+                                        Senha atual *
+                                    </label>
+                                    <div class="relative">
+                                        <input type="password" id="currentPassword" name="currentPassword" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
+                                        <button type="button" class="toggle-password absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="md:col-span-2 border-t border-gray-100 pt-4">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label for="newPassword" class="block text-sm font-medium text-gray-700 mb-1">
+                                                Nova senha *
+                                            </label>
+                                            <div class="relative">
+                                                <input type="password" id="newPassword" name="newPassword" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
+                                                <button type="button" class="toggle-password absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div>
+                                            <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-1">
+                                                Confirme a nova senha *
+                                            </label>
+                                            <div class="relative">
+                                                <input type="password" id="confirmPassword" name="confirmPassword" class="form-input w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none" required>
+                                                <button type="button" class="toggle-password absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                                        <h3 class="text-sm font-medium text-blue-800 mb-2">Requisitos de segurança da senha:</h3>
+                                        <ul class="text-xs text-blue-700 space-y-1 ml-5 list-disc">
+                                            <li>Mínimo de 8 caracteres</li>
+                                            <li>Pelo menos uma letra maiúscula</li>
+                                            <li>Pelo menos uma letra minúscula</li>
+                                            <li>Pelo menos um número</li>
+                                            <li>Pelo menos um caractere especial (ex: !@#$%)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-end pt-4 border-t border-gray-100">
+                                <button type="submit" id="updatePassword" class="px-6 py-2 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                                    <i class="fas fa-key mr-2"></i>
+                                    Atualizar senha
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Services Section (Placeholder) -->
+                <section id="services-section" class="bg-white rounded-xl shadow-md overflow-hidden hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-secondary-light bg-opacity-20 flex items-center justify-center text-secondary">
+                                <i class="fas fa-clipboard-list text-xl"></i>
+                            </div>
+                            <h2 class="ml-3 text-xl font-bold text-gray-800">Serviços</h2>
+                        </div>
+                        <p class="text-gray-600">Conteúdo dos serviços será exibido aqui.</p>
+                    </div>
+                </section>
+
+                <!-- Appointments Section (Placeholder) -->
+                <section id="appointments-section" class="bg-white rounded-xl shadow-md overflow-hidden hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-secondary-light bg-opacity-20 flex items-center justify-center text-secondary">
+                                <i class="fas fa-calendar-alt text-xl"></i>
+                            </div>
+                            <h2 class="ml-3 text-xl font-bold text-gray-800">Agendamentos</h2>
+                        </div>
+                        <p class="text-gray-600">Conteúdo dos agendamentos será exibido aqui.</p>
+                    </div>
+                </section>
+
+                <!-- Help Section (Placeholder) -->
+                <section id="help-section" class="bg-white rounded-xl shadow-md overflow-hidden hidden">
+                    <div class="p-6">
+                        <div class="flex items-center mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-secondary-light bg-opacity-20 flex items-center justify-center text-secondary">
+                                <i class="fas fa-question-circle text-xl"></i>
+                            </div>
+                            <h2 class="ml-3 text-xl font-bold text-gray-800">Ajuda</h2>
+                        </div>
+                        <p class="text-gray-600">Conteúdo de ajuda será exibido aqui.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

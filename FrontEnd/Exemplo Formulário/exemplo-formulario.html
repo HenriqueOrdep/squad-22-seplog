@@ -1,0 +1,464 @@
+<html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação de Declaração do IRPF - Prefeitura</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+<body>
+    <div class="min-h-screen bg-gray-50">
+        <!-- Cabeçalho -->
+        <header class="bg-blue-800 text-white shadow-md">
+            <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                    </svg>
+                    <div>
+                        <a href="../1.Tela Home/index.html"><h1 class="text-xl font-semibold">Prefeitura Municipal</h1></a>
+                        <p class="text-sm text-blue-100">Secretaria da Fazenda</p>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <p class="text-sm">Portal de Serviços ao Cidadão</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Conteúdo principal -->
+        <main class="container mx-auto px-4 py-8">
+            <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+                <!-- Título do formulário -->
+                <div class="bg-blue-700 text-white px-6 py-4">
+                    <h2 class="text-xl font-semibold">Solicitação de Declaração do IRPF</h2>
+                    <p class="text-sm text-blue-100">Preencha o formulário abaixo para solicitar o serviço</p>
+                </div>
+
+                <!-- Barra de progresso -->
+                <div class="px-6 pt-4">
+                    <div class="flex justify-between mb-1 text-xs">
+                        <span id="progress-text">Etapa 1 de 4</span>
+                        <span id="progress-percentage">25%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="progress-bar bg-blue-600 rounded-full" style="width: 25%"></div>
+                    </div>
+                </div>
+
+                <!-- Formulário -->
+                <form id="irpf-form" class="p-6">
+                    <!-- Etapa 1: Informações Pessoais -->
+                    <div class="form-step active" id="step-1">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Informações Pessoais</h3>
+                        
+                        <div class="mb-4">
+                            <label for="nome" class="block text-sm font-medium text-gray-700 mb-1">Nome completo *</label>
+                            <input type="text" id="nome" name="nome" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <div class="error-message hidden" id="nome-error">Campo obrigatório</div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="mb-4">
+                                <label for="cpf" class="block text-sm font-medium text-gray-700 mb-1">CPF *</label>
+                                <input type="text" id="cpf" name="cpf" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="000.000.000-00">
+                                <div class="error-message hidden" id="cpf-error">CPF inválido</div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="data_nascimento" class="block text-sm font-medium text-gray-700 mb-1">Data de nascimento *</label>
+                                <input type="date" id="data_nascimento" name="data_nascimento" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <div class="error-message hidden" id="data_nascimento-error">Campo obrigatório</div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="mb-4">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail *</label>
+                                <input type="email" id="email" name="email" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <div class="error-message hidden" id="email-error">E-mail inválido</div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="telefone" class="block text-sm font-medium text-gray-700 mb-1">Telefone para contato *</label>
+                                <input type="tel" id="telefone" name="telefone" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="(00) 00000-0000">
+                                <div class="error-message hidden" id="telefone-error">Telefone inválido</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="cep" class="block text-sm font-medium text-gray-700 mb-1">CEP *</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="cep" name="cep" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="00000-000">
+                                <button type="button" id="buscar-cep" class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-2 rounded-md transition">Buscar</button>
+                            </div>
+                            <div class="error-message hidden" id="cep-error">CEP inválido</div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="mb-4 md:col-span-2">
+                                <label for="rua" class="block text-sm font-medium text-gray-700 mb-1">Rua *</label>
+                                <input type="text" id="rua" name="rua" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <div class="error-message hidden" id="rua-error">Campo obrigatório</div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="numero" class="block text-sm font-medium text-gray-700 mb-1">Número *</label>
+                                <input type="text" id="numero" name="numero" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <div class="error-message hidden" id="numero-error">Campo obrigatório</div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="mb-4">
+                                <label for="bairro" class="block text-sm font-medium text-gray-700 mb-1">Bairro *</label>
+                                <input type="text" id="bairro" name="bairro" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <div class="error-message hidden" id="bairro-error">Campo obrigatório</div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="cidade" class="block text-sm font-medium text-gray-700 mb-1">Cidade *</label>
+                                <input type="text" id="cidade" name="cidade" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <div class="error-message hidden" id="cidade-error">Campo obrigatório</div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="estado" class="block text-sm font-medium text-gray-700 mb-1">Estado *</label>
+                                <select id="estado" name="estado" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Selecione</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espírito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
+                                </select>
+                                <div class="error-message hidden" id="estado-error">Campo obrigatório</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="complemento" class="block text-sm font-medium text-gray-700 mb-1">Complemento</label>
+                            <input type="text" id="complemento" name="complemento" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Apartamento, bloco, etc. (opcional)">
+                        </div>
+                        
+                        <div class="flex justify-end mt-6">
+                            <button type="button" class="next-step bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition">Próximo</button>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 2: Dados para a Declaração -->
+                    <div class="form-step" id="step-2">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Dados para a Declaração</h3>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Você declarou IRPF no ano anterior? *</label>
+                            <div class="flex space-x-4">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="declarou_anterior" value="sim" class="h-4 w-4 text-blue-600 focus:ring-blue-500" required="">
+                                    <span class="ml-2 text-gray-700">Sim</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="declarou_anterior" value="nao" class="h-4 w-4 text-blue-600 focus:ring-blue-500" required="">
+                                    <span class="ml-2 text-gray-700">Não</span>
+                                </label>
+                            </div>
+                            <div class="error-message hidden" id="declarou_anterior-error">Campo obrigatório</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="ano_base" class="block text-sm font-medium text-gray-700 mb-1">Ano-base da declaração atual *</label>
+                            <select id="ano_base" name="ano_base" required="" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Selecione</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                            </select>
+                            <div class="error-message hidden" id="ano_base-error">Campo obrigatório</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Possui dependentes? *</label>
+                            <div class="flex space-x-4">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="possui_dependentes" value="sim" class="h-4 w-4 text-blue-600 focus:ring-blue-500" required="">
+                                    <span class="ml-2 text-gray-700">Sim</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="possui_dependentes" value="nao" class="h-4 w-4 text-blue-600 focus:ring-blue-500" required="">
+                                    <span class="ml-2 text-gray-700">Não</span>
+                                </label>
+                            </div>
+                            <div class="error-message hidden" id="possui_dependentes-error">Campo obrigatório</div>
+                        </div>
+                        
+                        <div class="mb-4 hidden" id="dependentes-container">
+                            <label for="qtd_dependentes" class="block text-sm font-medium text-gray-700 mb-1">Quantos dependentes? *</label>
+                            <input type="number" id="qtd_dependentes" name="qtd_dependentes" min="1" max="20" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <div class="error-message hidden" id="qtd_dependentes-error">Campo obrigatório</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Possui rendimento de pessoa jurídica? *</label>
+                            <div class="flex space-x-4">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="rendimento_pj" value="sim" class="h-4 w-4 text-blue-600 focus:ring-blue-500" required="">
+                                    <span class="ml-2 text-gray-700">Sim</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="rendimento_pj" value="nao" class="h-4 w-4 text-blue-600 focus:ring-blue-500" required="">
+                                    <span class="ml-2 text-gray-700">Não</span>
+                                </label>
+                            </div>
+                            <div class="error-message hidden" id="rendimento_pj-error">Campo obrigatório</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Possui rendimento de pessoa física? *</label>
+                            <div class="flex space-x-4">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="rendimento_pf" value="sim" class="h-4 w-4 text-blue-600 focus:ring-blue-500" required="">
+                                    <span class="ml-2 text-gray-700">Sim</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="rendimento_pf" value="nao" class="h-4 w-4 text-blue-600 focus:ring-blue-500" required="">
+                                    <span class="ml-2 text-gray-700">Não</span>
+                                </label>
+                            </div>
+                            <div class="error-message hidden" id="rendimento_pf-error">Campo obrigatório</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Possui bens declaráveis? (veículos, imóveis, investimentos) *</label>
+                            <div class="flex space-x-4">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="possui_bens" value="sim" class="h-4 w-4 text-blue-600 focus:ring-blue-500" required="">
+                                    <span class="ml-2 text-gray-700">Sim</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="possui_bens" value="nao" class="h-4 w-4 text-blue-600 focus:ring-blue-500" required="">
+                                    <span class="ml-2 text-gray-700">Não</span>
+                                </label>
+                            </div>
+                            <div class="error-message hidden" id="possui_bens-error">Campo obrigatório</div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Já pagou imposto ou teve imposto retido na fonte? *</label>
+                            <div class="flex space-x-4">
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="imposto_retido" value="sim" class="h-4 w-4 text-blue-600 focus:ring-blue-500" required="">
+                                    <span class="ml-2 text-gray-700">Sim</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="imposto_retido" value="nao" class="h-4 w-4 text-blue-600 focus:ring-blue-500" required="">
+                                    <span class="ml-2 text-gray-700">Não</span>
+                                </label>
+                            </div>
+                            <div class="error-message hidden" id="imposto_retido-error">Campo obrigatório</div>
+                        </div>
+                        
+                        <div class="flex justify-between mt-6">
+                            <button type="button" class="prev-step bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2 rounded-md transition">Anterior</button>
+                            <button type="button" class="next-step bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition">Próximo</button>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 3: Documentos -->
+                    <div class="form-step" id="step-3">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Documentos</h3>
+                        
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Comprovante de residência (PDF ou imagem) *</label>
+                            <div class="file-input-container">
+                                <div class="bg-blue-50 border border-blue-200 rounded-md px-4 py-3 flex items-center justify-center cursor-pointer hover:bg-blue-100 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                    </svg>
+                                    <span class="text-blue-600">Clique para anexar comprovante</span>
+                                    <input type="file" id="comprovante_residencia" name="comprovante_residencia" accept=".pdf,.jpg,.jpeg,.png" required="">
+                                </div>
+                            </div>
+                            <div class="file-list" id="comprovante-residencia-list"></div>
+                            <div class="error-message hidden" id="comprovante_residencia-error">Documento obrigatório</div>
+                            <p class="text-xs text-gray-500 mt-1">Formatos aceitos: PDF, JPG, JPEG, PNG. Tamanho máximo: 5MB.</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Informes de rendimentos (anexar múltiplos arquivos) *</label>
+                            <div class="file-input-container">
+                                <div class="bg-blue-50 border border-blue-200 rounded-md px-4 py-3 flex items-center justify-center cursor-pointer hover:bg-blue-100 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                    </svg>
+                                    <span class="text-blue-600">Clique para anexar informes</span>
+                                    <input type="file" id="informes_rendimentos" name="informes_rendimentos" accept=".pdf,.jpg,.jpeg,.png" multiple="" required="">
+                                </div>
+                            </div>
+                            <div class="file-list" id="informes-rendimentos-list"></div>
+                            <div class="error-message hidden" id="informes_rendimentos-error">Documento obrigatório</div>
+                            <p class="text-xs text-gray-500 mt-1">Formatos aceitos: PDF, JPG, JPEG, PNG. Tamanho máximo: 5MB por arquivo.</p>
+                        </div>
+                        
+                        <div class="mb-6" id="documentos-dependentes-container">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Documentos de dependentes (se aplicável)</label>
+                            <div class="file-input-container">
+                                <div class="bg-blue-50 border border-blue-200 rounded-md px-4 py-3 flex items-center justify-center cursor-pointer hover:bg-blue-100 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                    </svg>
+                                    <span class="text-blue-600">Clique para anexar documentos</span>
+                                    <input type="file" id="documentos_dependentes" name="documentos_dependentes" accept=".pdf,.jpg,.jpeg,.png" multiple="">
+                                </div>
+                            </div>
+                            <div class="file-list" id="documentos-dependentes-list"></div>
+                            <p class="text-xs text-gray-500 mt-1">Formatos aceitos: PDF, JPG, JPEG, PNG. Tamanho máximo: 5MB por arquivo.</p>
+                        </div>
+                        
+                        <div class="mb-6" id="recibo-anterior-container">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Recibo da declaração anterior (se houver)</label>
+                            <div class="file-input-container">
+                                <div class="bg-blue-50 border border-blue-200 rounded-md px-4 py-3 flex items-center justify-center cursor-pointer hover:bg-blue-100 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                    </svg>
+                                    <span class="text-blue-600">Clique para anexar recibo</span>
+                                    <input type="file" id="recibo_anterior" name="recibo_anterior" accept=".pdf,.jpg,.jpeg,.png">
+                                </div>
+                            </div>
+                            <div class="file-list" id="recibo-anterior-list"></div>
+                            <p class="text-xs text-gray-500 mt-1">Formatos aceitos: PDF, JPG, JPEG, PNG. Tamanho máximo: 5MB.</p>
+                        </div>
+                        
+                        <div class="flex justify-between mt-6">
+                            <button type="button" class="prev-step bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2 rounded-md transition">Anterior</button>
+                            <button type="button" class="next-step bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition">Próximo</button>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 4: Observações e Envio -->
+                    <div class="form-step" id="step-4">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Observações Adicionais</h3>
+                        
+                        <div class="mb-6">
+                            <label for="observacoes" class="block text-sm font-medium text-gray-700 mb-1">Informações complementares</label>
+                            <textarea id="observacoes" name="observacoes" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Informe aqui qualquer detalhe adicional que considere relevante para sua solicitação..."></textarea>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                                <div class="flex">
+                                    <div class="flex-shrink-0">
+                                        <svg class="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="ml-3">
+                                        <p class="text-sm text-yellow-700">
+                                            Ao enviar este formulário, você declara que todas as informações fornecidas são verdadeiras e que está ciente de que a falsidade dessas informações constitui crime previsto no Código Penal Brasileiro.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" id="termos" name="termos" required="" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <span class="ml-2 text-sm text-gray-700">Declaro que li e concordo com os <a href="#" class="text-blue-600 hover:underline">termos de serviço</a> e <a href="#" class="text-blue-600 hover:underline">política de privacidade</a>. *</span>
+                            </label>
+                            <div class="error-message hidden" id="termos-error">Você precisa concordar com os termos para continuar</div>
+                        </div>
+                        
+                        <div class="flex justify-between mt-6">
+                            <button type="button" class="prev-step bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2 rounded-md transition">Anterior</button>
+                            <button type="submit" id="submit-button" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md transition flex items-center">
+                                <span>Enviar solicitação</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- Modal de sucesso -->
+        <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+                <div class="text-center">
+                    <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+                        <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="mt-4 text-lg font-medium text-gray-900">Solicitação enviada com sucesso!</h3>
+                    <p class="mt-2 text-sm text-gray-500">
+                        Sua solicitação de Declaração do IRPF foi recebida. Em breve, a Prefeitura entrará em contato através do e-mail ou telefone informado.
+                    </p>
+                    <p class="mt-4 text-sm text-gray-500">
+                        Número do protocolo: <span id="protocolo" class="font-medium text-blue-600"></span>
+                    </p>
+                    <div class="mt-6">
+                        <button id="close-modal" class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500">
+                            Fechar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer class="bg-gray-800 text-white py-6">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3">Prefeitura Municipal</h4>
+                        <p class="text-sm text-gray-300">Secretaria da Fazenda</p>
+                        <p class="text-sm text-gray-300">CNPJ: 00.000.000/0001-00</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3">Contato</h4>
+                        <p class="text-sm text-gray-300">Telefone: (00) 0000-0000</p>
+                        <p class="text-sm text-gray-300">E-mail: atendimento@prefeitura.gov.br</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3">Horário de Atendimento</h4>
+                        <p class="text-sm text-gray-300">Segunda a Sexta: 08h às 17h</p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-4 border-t border-gray-700 text-center text-sm text-gray-400">
+                    <p>© 2024 Prefeitura Municipal. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+   
+<script src="script.js"></script>
+</body>
+</html>

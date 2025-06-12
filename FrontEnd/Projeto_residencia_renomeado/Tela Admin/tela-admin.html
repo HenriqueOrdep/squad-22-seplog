@@ -1,0 +1,786 @@
+<html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntegraAju - Painel Administrativo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+<body>
+    <!-- Background com estrelas -->
+    <div class="space-bg" id="space-bg"><div class="star" style="width: 2.69236px; height: 2.69236px; left: 87.6743%; top: 65.5484%; animation-delay: 4.89235s;"></div><div class="star" style="width: 2.56685px; height: 2.56685px; left: 33.4186%; top: 90.6478%; animation-delay: 3.99092s;"></div><div class="star" style="width: 1.75349px; height: 1.75349px; left: 9.04725%; top: 13.7853%; animation-delay: 0.757005s;"></div><div class="star" style="width: 0.434861px; height: 0.434861px; left: 5.46951%; top: 41.3914%; animation-delay: 2.98399s;"></div><div class="star" style="width: 2.3754px; height: 2.3754px; left: 98.5434%; top: 55.1068%; animation-delay: 2.21232s;"></div><div class="star" style="width: 2.7283px; height: 2.7283px; left: 28.8767%; top: 26.8057%; animation-delay: 4.50062s;"></div><div class="star" style="width: 2.19435px; height: 2.19435px; left: 8.28433%; top: 18.1187%; animation-delay: 2.40023s;"></div><div class="star" style="width: 2.61278px; height: 2.61278px; left: 17.1864%; top: 88.5294%; animation-delay: 4.58182s;"></div><div class="star" style="width: 2.31432px; height: 2.31432px; left: 8.20884%; top: 67.9287%; animation-delay: 0.223616s;"></div><div class="star" style="width: 1.8389px; height: 1.8389px; left: 3.03167%; top: 24.2784%; animation-delay: 2.94408s;"></div><div class="star" style="width: 0.344148px; height: 0.344148px; left: 94.5276%; top: 92.8813%; animation-delay: 1.03807s;"></div><div class="star" style="width: 2.01453px; height: 2.01453px; left: 34.0355%; top: 13.487%; animation-delay: 0.00692268s;"></div><div class="star" style="width: 2.15696px; height: 2.15696px; left: 2.45391%; top: 54.0276%; animation-delay: 4.01348s;"></div><div class="star" style="width: 2.81241px; height: 2.81241px; left: 82.8527%; top: 88.9694%; animation-delay: 2.29147s;"></div><div class="star" style="width: 0.134445px; height: 0.134445px; left: 81.9271%; top: 40.5199%; animation-delay: 0.886775s;"></div><div class="star" style="width: 2.66373px; height: 2.66373px; left: 8.79427%; top: 2.49419%; animation-delay: 0.612222s;"></div><div class="star" style="width: 1.03375px; height: 1.03375px; left: 82.7428%; top: 68.217%; animation-delay: 1.23902s;"></div><div class="star" style="width: 0.400352px; height: 0.400352px; left: 27.0937%; top: 90.3852%; animation-delay: 0.802008s;"></div><div class="star" style="width: 2.61866px; height: 2.61866px; left: 12.7915%; top: 89.2014%; animation-delay: 3.70221s;"></div><div class="star" style="width: 1.78007px; height: 1.78007px; left: 14.5632%; top: 5.79508%; animation-delay: 1.04178s;"></div><div class="star" style="width: 2.09848px; height: 2.09848px; left: 72.1475%; top: 79.8196%; animation-delay: 3.51769s;"></div><div class="star" style="width: 0.534545px; height: 0.534545px; left: 42.1072%; top: 3.47745%; animation-delay: 2.18587s;"></div><div class="star" style="width: 2.67795px; height: 2.67795px; left: 9.02193%; top: 50.5882%; animation-delay: 3.11258s;"></div><div class="star" style="width: 1.79424px; height: 1.79424px; left: 19.2538%; top: 55.8032%; animation-delay: 0.682068s;"></div><div class="star" style="width: 2.84039px; height: 2.84039px; left: 14.0394%; top: 55.0998%; animation-delay: 0.639195s;"></div><div class="star" style="width: 0.52043px; height: 0.52043px; left: 48.947%; top: 70.8338%; animation-delay: 4.30472s;"></div><div class="star" style="width: 0.665787px; height: 0.665787px; left: 65.8274%; top: 66.583%; animation-delay: 2.4755s;"></div><div class="star" style="width: 0.337374px; height: 0.337374px; left: 22.6906%; top: 4.35689%; animation-delay: 3.01142s;"></div><div class="star" style="width: 1.87322px; height: 1.87322px; left: 76.251%; top: 64.6278%; animation-delay: 0.648279s;"></div><div class="star" style="width: 0.882115px; height: 0.882115px; left: 63.2268%; top: 93.8697%; animation-delay: 4.97355s;"></div><div class="star" style="width: 0.70694px; height: 0.70694px; left: 25.849%; top: 96.7703%; animation-delay: 4.11817s;"></div><div class="star" style="width: 2.31458px; height: 2.31458px; left: 79.763%; top: 73.6158%; animation-delay: 0.442242s;"></div><div class="star" style="width: 1.99269px; height: 1.99269px; left: 82.4439%; top: 49.8585%; animation-delay: 3.41385s;"></div><div class="star" style="width: 0.232513px; height: 0.232513px; left: 74.4259%; top: 33.9615%; animation-delay: 1.61894s;"></div><div class="star" style="width: 2.33326px; height: 2.33326px; left: 1.29513%; top: 13.5586%; animation-delay: 3.41687s;"></div><div class="star" style="width: 0.656406px; height: 0.656406px; left: 1.64517%; top: 85.3487%; animation-delay: 1.05321s;"></div><div class="star" style="width: 0.740987px; height: 0.740987px; left: 31.4932%; top: 97.31%; animation-delay: 0.98431s;"></div><div class="star" style="width: 0.578973px; height: 0.578973px; left: 79.8942%; top: 72.0338%; animation-delay: 2.94368s;"></div><div class="star" style="width: 1.34429px; height: 1.34429px; left: 53.9628%; top: 87.948%; animation-delay: 0.735483s;"></div><div class="star" style="width: 1.33475px; height: 1.33475px; left: 26.6491%; top: 4.08981%; animation-delay: 2.68565s;"></div><div class="star" style="width: 2.10414px; height: 2.10414px; left: 73.6299%; top: 22.0102%; animation-delay: 3.969s;"></div><div class="star" style="width: 1.56936px; height: 1.56936px; left: 11.422%; top: 49.0313%; animation-delay: 2.3681s;"></div><div class="star" style="width: 1.09495px; height: 1.09495px; left: 67.927%; top: 96.4522%; animation-delay: 1.14102s;"></div><div class="star" style="width: 2.06656px; height: 2.06656px; left: 43.8068%; top: 5.944%; animation-delay: 0.752954s;"></div><div class="star" style="width: 2.46036px; height: 2.46036px; left: 54.0634%; top: 79.2708%; animation-delay: 1.69641s;"></div><div class="star" style="width: 2.20153px; height: 2.20153px; left: 49.3001%; top: 1.05248%; animation-delay: 3.25284s;"></div><div class="star" style="width: 2.82145px; height: 2.82145px; left: 72.7584%; top: 36.9599%; animation-delay: 0.286654s;"></div><div class="star" style="width: 2.48769px; height: 2.48769px; left: 42.9193%; top: 24.0531%; animation-delay: 4.62542s;"></div><div class="star" style="width: 0.786262px; height: 0.786262px; left: 49.7076%; top: 21.0602%; animation-delay: 2.76194s;"></div><div class="star" style="width: 1.85931px; height: 1.85931px; left: 84.1824%; top: 44.4848%; animation-delay: 3.34892s;"></div><div class="star" style="width: 1.70975px; height: 1.70975px; left: 31.0301%; top: 93.4201%; animation-delay: 1.9802s;"></div><div class="star" style="width: 2.03543px; height: 2.03543px; left: 46.3421%; top: 74.2874%; animation-delay: 3.10983s;"></div><div class="star" style="width: 2.17233px; height: 2.17233px; left: 89.6812%; top: 67.1643%; animation-delay: 4.93109s;"></div><div class="star" style="width: 1.0504px; height: 1.0504px; left: 46.0122%; top: 21.6072%; animation-delay: 2.3552s;"></div><div class="star" style="width: 0.616283px; height: 0.616283px; left: 43.1318%; top: 40.8522%; animation-delay: 3.63126s;"></div><div class="star" style="width: 2.33174px; height: 2.33174px; left: 96.1431%; top: 47.6165%; animation-delay: 3.92786s;"></div><div class="star" style="width: 0.86633px; height: 0.86633px; left: 14.1386%; top: 33.2831%; animation-delay: 2.53258s;"></div><div class="star" style="width: 0.100768px; height: 0.100768px; left: 71.9431%; top: 56.2301%; animation-delay: 0.261385s;"></div><div class="star" style="width: 1.14578px; height: 1.14578px; left: 33.3871%; top: 45.8775%; animation-delay: 0.723974s;"></div><div class="star" style="width: 1.60045px; height: 1.60045px; left: 75.7648%; top: 33.7609%; animation-delay: 1.10846s;"></div><div class="star" style="width: 0.0526093px; height: 0.0526093px; left: 52.1353%; top: 4.56545%; animation-delay: 0.643494s;"></div><div class="star" style="width: 1.63625px; height: 1.63625px; left: 76.7622%; top: 41.8088%; animation-delay: 0.00725131s;"></div><div class="star" style="width: 2.29547px; height: 2.29547px; left: 22.6001%; top: 49.651%; animation-delay: 2.15742s;"></div><div class="star" style="width: 0.0925323px; height: 0.0925323px; left: 92.94%; top: 71.0312%; animation-delay: 3.65183s;"></div><div class="star" style="width: 0.631228px; height: 0.631228px; left: 25.3947%; top: 15.1633%; animation-delay: 4.43333s;"></div><div class="star" style="width: 2.02091px; height: 2.02091px; left: 23.0842%; top: 43.095%; animation-delay: 2.46982s;"></div><div class="star" style="width: 0.298555px; height: 0.298555px; left: 46.1543%; top: 34.2543%; animation-delay: 0.943181s;"></div><div class="star" style="width: 0.347817px; height: 0.347817px; left: 14.3652%; top: 59.6681%; animation-delay: 1.87938s;"></div><div class="star" style="width: 0.585654px; height: 0.585654px; left: 87.8754%; top: 60.7754%; animation-delay: 1.45365s;"></div><div class="star" style="width: 0.476972px; height: 0.476972px; left: 93.1537%; top: 29.5694%; animation-delay: 4.84739s;"></div><div class="star" style="width: 0.216829px; height: 0.216829px; left: 34.5685%; top: 25.4651%; animation-delay: 0.608071s;"></div><div class="star" style="width: 1.54156px; height: 1.54156px; left: 68.3665%; top: 84.0382%; animation-delay: 2.15661s;"></div><div class="star" style="width: 1.63937px; height: 1.63937px; left: 25.2878%; top: 37.9582%; animation-delay: 2.93743s;"></div><div class="star" style="width: 1.99214px; height: 1.99214px; left: 1.7097%; top: 3.28885%; animation-delay: 2.23981s;"></div><div class="star" style="width: 2.57274px; height: 2.57274px; left: 17.0619%; top: 94.2033%; animation-delay: 2.56807s;"></div><div class="star" style="width: 2.54607px; height: 2.54607px; left: 83.8686%; top: 33.409%; animation-delay: 4.53292s;"></div><div class="star" style="width: 1.75969px; height: 1.75969px; left: 73.2476%; top: 5.00335%; animation-delay: 3.76424s;"></div><div class="star" style="width: 0.378512px; height: 0.378512px; left: 46.1722%; top: 20.9716%; animation-delay: 0.739405s;"></div><div class="star" style="width: 1.40191px; height: 1.40191px; left: 84.1946%; top: 20.1812%; animation-delay: 0.600928s;"></div><div class="star" style="width: 1.01193px; height: 1.01193px; left: 62.2949%; top: 35.2998%; animation-delay: 4.46894s;"></div><div class="star" style="width: 1.13634px; height: 1.13634px; left: 84.5793%; top: 21.6831%; animation-delay: 1.02514s;"></div><div class="star" style="width: 1.48368px; height: 1.48368px; left: 31.1864%; top: 50.0135%; animation-delay: 4.34339s;"></div><div class="star" style="width: 2.86578px; height: 2.86578px; left: 37.1544%; top: 17.1615%; animation-delay: 1.78432s;"></div><div class="star" style="width: 2.93463px; height: 2.93463px; left: 52.238%; top: 18.1717%; animation-delay: 4.80173s;"></div><div class="star" style="width: 1.75766px; height: 1.75766px; left: 55.1285%; top: 84.3546%; animation-delay: 4.64097s;"></div><div class="star" style="width: 2.59622px; height: 2.59622px; left: 31.9485%; top: 77.6953%; animation-delay: 3.91846s;"></div><div class="star" style="width: 2.25547px; height: 2.25547px; left: 76.4312%; top: 32.705%; animation-delay: 4.27351s;"></div><div class="star" style="width: 1.51569px; height: 1.51569px; left: 2.02693%; top: 49.6471%; animation-delay: 1.79571s;"></div><div class="star" style="width: 0.549832px; height: 0.549832px; left: 89.8699%; top: 41.6527%; animation-delay: 0.754239s;"></div><div class="star" style="width: 1.38001px; height: 1.38001px; left: 94.6504%; top: 25.2522%; animation-delay: 1.48816s;"></div><div class="star" style="width: 2.23298px; height: 2.23298px; left: 27.4263%; top: 60.7922%; animation-delay: 3.14805s;"></div><div class="star" style="width: 2.40745px; height: 2.40745px; left: 46.1231%; top: 32.5537%; animation-delay: 2.37507s;"></div><div class="star" style="width: 1.35592px; height: 1.35592px; left: 7.1668%; top: 39.3839%; animation-delay: 4.16862s;"></div><div class="star" style="width: 0.0484033px; height: 0.0484033px; left: 58.5525%; top: 45.0223%; animation-delay: 3.40032s;"></div><div class="star" style="width: 2.37465px; height: 2.37465px; left: 64.4851%; top: 43.1735%; animation-delay: 2.42538s;"></div><div class="star" style="width: 1.42747px; height: 1.42747px; left: 10.5885%; top: 62.0352%; animation-delay: 1.85615s;"></div><div class="star" style="width: 1.35411px; height: 1.35411px; left: 45.8189%; top: 57.2797%; animation-delay: 3.85656s;"></div><div class="star" style="width: 1.48957px; height: 1.48957px; left: 46.7263%; top: 88.0875%; animation-delay: 2.67771s;"></div><div class="star" style="width: 0.451844px; height: 0.451844px; left: 82.3516%; top: 96.2346%; animation-delay: 2.15845s;"></div><div class="star" style="width: 1.71744px; height: 1.71744px; left: 54.297%; top: 15.8667%; animation-delay: 4.21984s;"></div><div class="star" style="width: 1.6796px; height: 1.6796px; left: 31.9478%; top: 48.2455%; animation-delay: 3.05638s;"></div><div class="star" style="width: 2.46837px; height: 2.46837px; left: 77.9828%; top: 7.44044%; animation-delay: 1.15557s;"></div><div class="star" style="width: 2.69081px; height: 2.69081px; left: 93.3752%; top: 52.5305%; animation-delay: 0.764869s;"></div><div class="star" style="width: 0.917415px; height: 0.917415px; left: 75.2413%; top: 60.9818%; animation-delay: 1.46657s;"></div><div class="star" style="width: 2.7867px; height: 2.7867px; left: 24.303%; top: 35.4959%; animation-delay: 4.49079s;"></div><div class="star" style="width: 1.3645px; height: 1.3645px; left: 70.4135%; top: 76.8606%; animation-delay: 2.00298s;"></div><div class="star" style="width: 1.49793px; height: 1.49793px; left: 78.8707%; top: 14.8315%; animation-delay: 1.68809s;"></div><div class="star" style="width: 1.6882px; height: 1.6882px; left: 35.5899%; top: 7.49722%; animation-delay: 0.123989s;"></div><div class="star" style="width: 1.96173px; height: 1.96173px; left: 43.5577%; top: 70.7273%; animation-delay: 3.72881s;"></div><div class="star" style="width: 2.40883px; height: 2.40883px; left: 55.7408%; top: 44.3253%; animation-delay: 2.48865s;"></div><div class="star" style="width: 1.15301px; height: 1.15301px; left: 74.0547%; top: 56.7813%; animation-delay: 3.79226s;"></div><div class="star" style="width: 2.21667px; height: 2.21667px; left: 21.9627%; top: 41.1637%; animation-delay: 0.435992s;"></div><div class="star" style="width: 2.51258px; height: 2.51258px; left: 86.8662%; top: 96.3818%; animation-delay: 3.75417s;"></div><div class="star" style="width: 2.70132px; height: 2.70132px; left: 85.7088%; top: 61.4424%; animation-delay: 1.0195s;"></div><div class="star" style="width: 0.285783px; height: 0.285783px; left: 22.7952%; top: 87.7339%; animation-delay: 0.483764s;"></div><div class="star" style="width: 0.212236px; height: 0.212236px; left: 15.2417%; top: 67.3964%; animation-delay: 0.147152s;"></div><div class="star" style="width: 0.0584001px; height: 0.0584001px; left: 94.8402%; top: 79.0755%; animation-delay: 3.7273s;"></div><div class="star" style="width: 2.11919px; height: 2.11919px; left: 70.8553%; top: 79.3846%; animation-delay: 3.09752s;"></div><div class="star" style="width: 2.41345px; height: 2.41345px; left: 21.5874%; top: 2.99115%; animation-delay: 1.6541s;"></div><div class="star" style="width: 2.58953px; height: 2.58953px; left: 82.5466%; top: 80.1649%; animation-delay: 2.46187s;"></div><div class="star" style="width: 1.56879px; height: 1.56879px; left: 12.7741%; top: 50.5019%; animation-delay: 1.27674s;"></div><div class="star" style="width: 2.52739px; height: 2.52739px; left: 80.944%; top: 34.8432%; animation-delay: 4.23737s;"></div><div class="star" style="width: 0.659633px; height: 0.659633px; left: 42.5877%; top: 24.0163%; animation-delay: 0.858799s;"></div><div class="star" style="width: 1.62814px; height: 1.62814px; left: 69.0227%; top: 89.9208%; animation-delay: 1.28226s;"></div><div class="star" style="width: 2.16485px; height: 2.16485px; left: 32.8866%; top: 37.0672%; animation-delay: 3.13751s;"></div><div class="star" style="width: 0.609959px; height: 0.609959px; left: 73.1575%; top: 30.2584%; animation-delay: 2.28613s;"></div><div class="star" style="width: 0.270228px; height: 0.270228px; left: 78.9088%; top: 93.4632%; animation-delay: 3.42863s;"></div><div class="star" style="width: 2.98925px; height: 2.98925px; left: 77.3218%; top: 44.2115%; animation-delay: 4.23884s;"></div><div class="star" style="width: 1.90946px; height: 1.90946px; left: 30.8975%; top: 56.3124%; animation-delay: 3.82141s;"></div><div class="star" style="width: 0.265167px; height: 0.265167px; left: 39.1648%; top: 94.3806%; animation-delay: 2.89536s;"></div><div class="star" style="width: 1.36811px; height: 1.36811px; left: 49.2284%; top: 75.0211%; animation-delay: 2.44487s;"></div><div class="star" style="width: 1.89687px; height: 1.89687px; left: 14.0061%; top: 76.4804%; animation-delay: 3.56979s;"></div><div class="star" style="width: 0.393641px; height: 0.393641px; left: 60.3465%; top: 50.1395%; animation-delay: 4.96709s;"></div><div class="star" style="width: 1.08403px; height: 1.08403px; left: 31.4387%; top: 60.9872%; animation-delay: 1.55452s;"></div><div class="star" style="width: 2.70232px; height: 2.70232px; left: 67.8844%; top: 47.2528%; animation-delay: 1.9309s;"></div><div class="star" style="width: 1.82397px; height: 1.82397px; left: 91.1706%; top: 38.399%; animation-delay: 0.949076s;"></div><div class="star" style="width: 0.900051px; height: 0.900051px; left: 59.1046%; top: 23.1752%; animation-delay: 2.75427s;"></div><div class="star" style="width: 2.022px; height: 2.022px; left: 68.9731%; top: 8.33159%; animation-delay: 4.29061s;"></div><div class="star" style="width: 0.326821px; height: 0.326821px; left: 18.9625%; top: 10.1509%; animation-delay: 3.69482s;"></div><div class="star" style="width: 2.29541px; height: 2.29541px; left: 82.7994%; top: 34.041%; animation-delay: 3.50402s;"></div><div class="star" style="width: 1.7798px; height: 1.7798px; left: 94.3533%; top: 42.9682%; animation-delay: 0.0451801s;"></div><div class="star" style="width: 0.345453px; height: 0.345453px; left: 58.3282%; top: 15.9796%; animation-delay: 0.993246s;"></div><div class="star" style="width: 2.47001px; height: 2.47001px; left: 48.9294%; top: 55.8165%; animation-delay: 3.95919s;"></div><div class="star" style="width: 2.56936px; height: 2.56936px; left: 22.804%; top: 30.3047%; animation-delay: 4.39623s;"></div><div class="star" style="width: 1.33042px; height: 1.33042px; left: 47.3704%; top: 75.6225%; animation-delay: 1.15337s;"></div><div class="star" style="width: 1.76537px; height: 1.76537px; left: 99.58%; top: 1.43583%; animation-delay: 4.74972s;"></div><div class="star" style="width: 1.85963px; height: 1.85963px; left: 10.4386%; top: 51.6672%; animation-delay: 4.86027s;"></div><div class="star" style="width: 2.5182px; height: 2.5182px; left: 17.3852%; top: 52.7427%; animation-delay: 3.06313s;"></div><div class="star" style="width: 0.160684px; height: 0.160684px; left: 99.4227%; top: 32.6498%; animation-delay: 3.17694s;"></div><div class="star" style="width: 1.25501px; height: 1.25501px; left: 61.684%; top: 96.157%; animation-delay: 0.748318s;"></div></div>
+    
+    <!-- Layout principal -->
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar w-64 h-full fixed left-0 top-0 flex flex-col -translate-x-full">
+            <!-- Logo -->
+            <div class="p-4 flex items-center justify-center border-b border-gray-700">
+                <div class="text-2xl font-bold text-white flex items-center">
+                    <span class="text-primary mr-2">
+                        <i class="fas fa-city text-purple-400"></i>
+                    </span>
+                    <span>IntegraAju</span>
+                </div>
+            </div>
+            
+            <!-- Menu Items -->
+            <nav class="flex-1 overflow-y-auto py-4">
+                <ul>
+                    <li>
+                        <a href="#" class="sidebar-item active flex items-center px-4 py-3 text-gray-300 hover:text-white">
+                            <span class="sidebar-icon mr-3 text-lg">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </span>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-gray-300 hover:text-white">
+                            <span class="sidebar-icon mr-3 text-lg">
+                                <i class="fas fa-users"></i>
+                            </span>
+                            <span>Usuários</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-gray-300 hover:text-white">
+                            <span class="sidebar-icon mr-3 text-lg">
+                                <i class="fas fa-handshake"></i>
+                            </span>
+                            <span>Serviço 1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-gray-300 hover:text-white">
+                            <span class="sidebar-icon mr-3 text-lg">
+                                <i class="fas fa-file-signature"></i>
+                            </span>
+                            <span>Serviço 2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-gray-300 hover:text-white">
+                            <span class="sidebar-icon mr-3 text-lg">
+                                <i class="fas fa-chart-line"></i>
+                            </span>
+                            <span>Serviço 3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-gray-300 hover:text-white">
+                            <span class="sidebar-icon mr-3 text-lg">
+                                <i class="fas fa-cogs"></i>
+                            </span>
+                            <span>Serviço 4</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Bottom Menu -->
+            <div class="p-4 border-t border-gray-700">
+                <ul>
+                    <li>
+                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-gray-300 hover:text-white">
+                            <span class="sidebar-icon mr-3 text-lg">
+                                <i class="fas fa-question-circle"></i>
+                            </span>
+                            <span>Ajuda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-item flex items-center px-4 py-3 text-gray-300 hover:text-white">
+                            <span class="sidebar-icon mr-3 text-lg">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </span>
+                            <span>Sair</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        
+        <!-- Mobile Sidebar Toggle -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black opacity-50 z-40 hidden lg:hidden"></div>
+        
+        <!-- Main Content Area -->
+        <main class="content-area flex-1 transition-all duration-300 ml-0" id="content-area">
+            <!-- Top Bar -->
+            <header class="bg-opacity-90 backdrop-blur-md bg-gray-900 border-b border-gray-700 sticky top-0 z-30">
+                <div class="container mx-auto">
+                    <div class="flex flex-col md:flex-row items-center justify-between p-4">
+                        <!-- Mobile Menu Button -->
+                        <button id="mobile-menu-button" class="lg:hidden text-white p-2 focus:outline-none">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                        
+                        <!-- Greeting -->
+                        <div class="flex items-center">
+                            <h2 class="text-xl font-semibold">Olá, Administrador 👋</h2>
+                        </div>
+                        
+                        <!-- Search -->
+                        <div class="relative mt-4 md:mt-0 w-full md:w-64">
+                            <input type="text" placeholder="Buscar..." class="search-input w-full py-2 px-4 rounded-full text-white focus:outline-none">
+                            <span class="absolute right-3 top-2 text-gray-400">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stories/Instagram Integration -->
+                    <div class="px-4 pb-4 overflow-x-auto">
+                        <div class="flex space-x-4 py-2">
+                            <div class="tooltip story-avatar relative flex flex-col items-center">
+                                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-transparent relative">
+                                    <div class="w-full h-full bg-purple-600 flex items-center justify-center text-white">
+                                        <i class="fas fa-bullhorn text-xl"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs mt-1 text-center">@seplogaju</span>
+                                <span class="tooltip-text">Novidades no sistema</span>
+                            </div>
+                            
+                            <div class="tooltip story-avatar relative flex flex-col items-center">
+                                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-transparent relative">
+                                    <div class="w-full h-full bg-blue-600 flex items-center justify-center text-white">
+                                        <i class="fas fa-balance-scale text-xl"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs mt-1 text-center">@proconaju</span>
+                                <span class="tooltip-text">Atualizações Procon</span>
+                            </div>
+                            
+                            <div class="tooltip story-avatar relative flex flex-col items-center">
+                                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-transparent relative">
+                                    <div class="w-full h-full bg-green-600 flex items-center justify-center text-white">
+                                        <i class="fas fa-leaf text-xl"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs mt-1 text-center">@emaaju</span>
+                                <span class="tooltip-text">Meio ambiente</span>
+                            </div>
+                            
+                            <div class="tooltip story-avatar relative flex flex-col items-center">
+                                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-transparent relative">
+                                    <div class="w-full h-full bg-red-600 flex items-center justify-center text-white">
+                                        <i class="fas fa-heartbeat text-xl"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs mt-1 text-center">@saudeaju</span>
+                                <span class="tooltip-text">Informações de saúde</span>
+                            </div>
+                            
+                            <div class="tooltip story-avatar relative flex flex-col items-center">
+                                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-transparent relative">
+                                    <div class="w-full h-full bg-yellow-600 flex items-center justify-center text-white">
+                                        <i class="fas fa-graduation-cap text-xl"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs mt-1 text-center">@educaju</span>
+                                <span class="tooltip-text">Notícias educacionais</span>
+                            </div>
+                            
+                            <div class="tooltip story-avatar relative flex flex-col items-center">
+                                <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-transparent relative">
+                                    <div class="w-full h-full bg-pink-600 flex items-center justify-center text-white">
+                                        <i class="fas fa-calendar-alt text-xl"></i>
+                                    </div>
+                                </div>
+                                <span class="text-xs mt-1 text-center">@eventosaju</span>
+                                <span class="tooltip-text">Eventos da cidade</span>
+                            </div>
+                        </div>
+                    </div>
+                </div></header>
+                
+                <!-- Dashboard Content -->
+                <div class="container mx-auto p-4">
+                    <!-- KPI Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <!-- Card 1 -->
+                        <div class="card rounded-lg p-6 animate__animated animate__fadeIn">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3 class="text-gray-400 text-sm font-medium">Casos Abertos</h3>
+                                    <div class="flex items-end mt-2">
+                                        <span class="text-3xl font-bold">127</span>
+                                        <span class="text-green-500 ml-2 text-sm flex items-center">
+                                            <i class="fas fa-arrow-up mr-1"></i>
+                                            12%
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="bg-blue-500 bg-opacity-20 p-3 rounded-full">
+                                    <i class="fas fa-folder-open text-blue-500 text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-sm text-gray-400">
+                                Atualizado há 2 horas
+                            </div>
+                        </div>
+                        
+                        <!-- Card 2 -->
+                        <div class="card rounded-lg p-6 animate__animated animate__fadeIn" style="animation-delay: 0.2s">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3 class="text-gray-400 text-sm font-medium">Casos Solucionados</h3>
+                                    <div class="flex items-end mt-2">
+                                        <span class="text-3xl font-bold">85</span>
+                                        <span class="text-red-500 ml-2 text-sm flex items-center">
+                                            <i class="fas fa-arrow-down mr-1"></i>
+                                            5%
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="bg-green-500 bg-opacity-20 p-3 rounded-full">
+                                    <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-sm text-gray-400">
+                                Atualizado há 2 horas
+                            </div>
+                        </div>
+                        
+                        <!-- Card 3 -->
+                        <div class="card rounded-lg p-6 animate__animated animate__fadeIn" style="animation-delay: 0.4s">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3 class="text-gray-400 text-sm font-medium">Ativos Agora</h3>
+                                    <div class="flex items-end mt-2">
+                                        <span class="text-3xl font-bold">24</span>
+                                    </div>
+                                </div>
+                                <div class="flex -space-x-2">
+                                    <div class="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-xs font-bold border-2 border-gray-800">JM</div>
+                                    <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-xs font-bold border-2 border-gray-800">TS</div>
+                                    <div class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-xs font-bold border-2 border-gray-800">AL</div>
+                                    <div class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-xs font-bold border-2 border-gray-800">+21</div>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-sm text-gray-400">
+                                Atualizado agora
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Users Table Section -->
+                    <div class="card rounded-lg p-6 mb-8">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                            <h2 class="text-xl font-bold mb-4 md:mb-0">Usuários do Sistema</h2>
+                            
+                            <div class="flex flex-col sm:flex-row w-full md:w-auto space-y-2 sm:space-y-0 sm:space-x-2">
+                                <!-- Search -->
+                                <div class="relative">
+                                    <input type="text" id="table-search" placeholder="Buscar usuário..." class="search-input py-2 px-4 rounded-lg text-white focus:outline-none w-full">
+                                    <span class="absolute right-3 top-2 text-gray-400">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </div>
+                                
+                                <!-- Filter -->
+                                <div class="relative">
+                                    <select id="status-filter" class="search-input py-2 pl-4 pr-10 rounded-lg text-white focus:outline-none appearance-none">
+                                        <option value="all">Todos</option>
+                                        <option value="active">Ativos</option>
+                                        <option value="inactive">Inativos</option>
+                                    </select>
+                                    <span class="absolute right-3 top-2 text-gray-400 pointer-events-none">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </span>
+                                </div>
+                                
+                                <!-- Add User Button -->
+                                <button id="add-user-btn" class="btn-primary py-2 px-4 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-plus mr-2"></i>
+                                    Novo Usuário
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Table -->
+                        <div class="table-container overflow-x-auto">
+                            <table class="min-w-full">
+                                <thead>
+                                    <tr>
+                                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-300 cursor-pointer">
+                                            <div class="flex items-center">
+                                                Nome
+                                                <i class="fas fa-sort ml-1 text-gray-500"></i>
+                                            </div>
+                                        </th>
+                                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-300 cursor-pointer">
+                                            <div class="flex items-center">
+                                                Serviço
+                                                <i class="fas fa-sort ml-1 text-gray-500"></i>
+                                            </div>
+                                        </th>
+                                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-300 cursor-pointer">
+                                            <div class="flex items-center">
+                                                Número
+                                                <i class="fas fa-sort ml-1 text-gray-500"></i>
+                                            </div>
+                                        </th>
+                                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-300 cursor-pointer">
+                                            <div class="flex items-center">
+                                                Email
+                                                <i class="fas fa-sort ml-1 text-gray-500"></i>
+                                            </div>
+                                        </th>
+                                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-300 cursor-pointer">
+                                            <div class="flex items-center">
+                                                Bairro
+                                                <i class="fas fa-sort ml-1 text-gray-500"></i>
+                                            </div>
+                                        </th>
+                                        <th class="px-4 py-3 text-left text-sm font-medium text-gray-300">Status</th>
+                                        <th class="px-4 py-3 text-right text-sm font-medium text-gray-300">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="users-table-body"><tr class="border-b border-gray-700">
+                            <td class="px-4 py-3 text-sm">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold mr-3">
+                                        AS
+                                    </div>
+                                    <span>Ana Silva</span>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-2 py-1 rounded-md bg-opacity-20 bg-blue-600 text-blue-200" style="cursor: pointer;">
+                                    Procon
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm">(79) 99123-4567</td>
+                            <td class="px-4 py-3 text-sm">ana.silva@email.com</td>
+                            <td class="px-4 py-3 text-sm">Centro</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="status-badge status-active">
+                                    Ativo
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm text-right">
+                                <div class="flex justify-end space-x-2">
+                                    <button class="text-blue-400 hover:text-blue-300" aria-label="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-400 hover:text-red-300" aria-label="Excluir">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr><tr class="border-b border-gray-700">
+                            <td class="px-4 py-3 text-sm">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold mr-3">
+                                        JO
+                                    </div>
+                                    <span>João Oliveira</span>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-2 py-1 rounded-md bg-opacity-20 bg-red-600 text-red-200" style="cursor: pointer;">
+                                    Saúde
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm">(79) 98765-4321</td>
+                            <td class="px-4 py-3 text-sm">joao.oliveira@email.com</td>
+                            <td class="px-4 py-3 text-sm">Atalaia</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="status-badge status-active">
+                                    Ativo
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm text-right">
+                                <div class="flex justify-end space-x-2">
+                                    <button class="text-blue-400 hover:text-blue-300" aria-label="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-400 hover:text-red-300" aria-label="Excluir">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr><tr class="border-b border-gray-700">
+                            <td class="px-4 py-3 text-sm">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold mr-3">
+                                        MS
+                                    </div>
+                                    <span>Maria Santos</span>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-2 py-1 rounded-md bg-opacity-20 bg-yellow-600 text-yellow-200" style="cursor: pointer;">
+                                    Educação
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm">(79) 99876-5432</td>
+                            <td class="px-4 py-3 text-sm">maria.santos@email.com</td>
+                            <td class="px-4 py-3 text-sm">Jardins</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="status-badge status-inactive">
+                                    Inativo
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm text-right">
+                                <div class="flex justify-end space-x-2">
+                                    <button class="text-blue-400 hover:text-blue-300" aria-label="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-400 hover:text-red-300" aria-label="Excluir">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr><tr class="border-b border-gray-700">
+                            <td class="px-4 py-3 text-sm">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold mr-3">
+                                        PC
+                                    </div>
+                                    <span>Pedro Costa</span>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-2 py-1 rounded-md bg-opacity-20 bg-green-600 text-green-200" style="cursor: pointer;">
+                                    Meio Ambiente
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm">(79) 98234-5678</td>
+                            <td class="px-4 py-3 text-sm">pedro.costa@email.com</td>
+                            <td class="px-4 py-3 text-sm">Farolândia</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="status-badge status-active">
+                                    Ativo
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm text-right">
+                                <div class="flex justify-end space-x-2">
+                                    <button class="text-blue-400 hover:text-blue-300" aria-label="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-400 hover:text-red-300" aria-label="Excluir">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr><tr class="border-b border-gray-700">
+                            <td class="px-4 py-3 text-sm">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold mr-3">
+                                        CM
+                                    </div>
+                                    <span>Carla Mendes</span>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-2 py-1 rounded-md bg-opacity-20 bg-blue-600 text-blue-200" style="cursor: pointer;">
+                                    Procon
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm">(79) 99345-6789</td>
+                            <td class="px-4 py-3 text-sm">carla.mendes@email.com</td>
+                            <td class="px-4 py-3 text-sm">Salgado Filho</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="status-badge status-active">
+                                    Ativo
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm text-right">
+                                <div class="flex justify-end space-x-2">
+                                    <button class="text-blue-400 hover:text-blue-300" aria-label="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-400 hover:text-red-300" aria-label="Excluir">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr><tr class="border-b border-gray-700">
+                            <td class="px-4 py-3 text-sm">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold mr-3">
+                                        LF
+                                    </div>
+                                    <span>Lucas Ferreira</span>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-2 py-1 rounded-md bg-opacity-20 bg-red-600 text-red-200" style="cursor: pointer;">
+                                    Saúde
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm">(79) 98456-7890</td>
+                            <td class="px-4 py-3 text-sm">lucas.ferreira@email.com</td>
+                            <td class="px-4 py-3 text-sm">São José</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="status-badge status-inactive">
+                                    Inativo
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm text-right">
+                                <div class="flex justify-end space-x-2">
+                                    <button class="text-blue-400 hover:text-blue-300" aria-label="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-400 hover:text-red-300" aria-label="Excluir">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr><tr class="border-b border-gray-700">
+                            <td class="px-4 py-3 text-sm">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold mr-3">
+                                        JL
+                                    </div>
+                                    <span>Juliana Lima</span>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-2 py-1 rounded-md bg-opacity-20 bg-yellow-600 text-yellow-200" style="cursor: pointer;">
+                                    Educação
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm">(79) 99567-8901</td>
+                            <td class="px-4 py-3 text-sm">juliana.lima@email.com</td>
+                            <td class="px-4 py-3 text-sm">Luzia</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="status-badge status-active">
+                                    Ativo
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm text-right">
+                                <div class="flex justify-end space-x-2">
+                                    <button class="text-blue-400 hover:text-blue-300" aria-label="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-400 hover:text-red-300" aria-label="Excluir">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr><tr class="border-b border-gray-700">
+                            <td class="px-4 py-3 text-sm">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold mr-3">
+                                        RA
+                                    </div>
+                                    <span>Roberto Alves</span>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-2 py-1 rounded-md bg-opacity-20 bg-green-600 text-green-200" style="cursor: pointer;">
+                                    Meio Ambiente
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm">(79) 98678-9012</td>
+                            <td class="px-4 py-3 text-sm">roberto.alves@email.com</td>
+                            <td class="px-4 py-3 text-sm">Grageru</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="status-badge status-active">
+                                    Ativo
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm text-right">
+                                <div class="flex justify-end space-x-2">
+                                    <button class="text-blue-400 hover:text-blue-300" aria-label="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-400 hover:text-red-300" aria-label="Excluir">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr><tr class="border-b border-gray-700">
+                            <td class="px-4 py-3 text-sm">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold mr-3">
+                                        FD
+                                    </div>
+                                    <span>Fernanda Dias</span>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-2 py-1 rounded-md bg-opacity-20 bg-blue-600 text-blue-200" style="cursor: pointer;">
+                                    Procon
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm">(79) 99789-0123</td>
+                            <td class="px-4 py-3 text-sm">fernanda.dias@email.com</td>
+                            <td class="px-4 py-3 text-sm">13 de Julho</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="status-badge status-inactive">
+                                    Inativo
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm text-right">
+                                <div class="flex justify-end space-x-2">
+                                    <button class="text-blue-400 hover:text-blue-300" aria-label="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-400 hover:text-red-300" aria-label="Excluir">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr><tr class="border-b border-gray-700">
+                            <td class="px-4 py-3 text-sm">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold mr-3">
+                                        MG
+                                    </div>
+                                    <span>Marcelo Gomes</span>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="px-2 py-1 rounded-md bg-opacity-20 bg-red-600 text-red-200" style="cursor: pointer;">
+                                    Saúde
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm">(79) 98890-1234</td>
+                            <td class="px-4 py-3 text-sm">marcelo.gomes@email.com</td>
+                            <td class="px-4 py-3 text-sm">Inácio Barbosa</td>
+                            <td class="px-4 py-3 text-sm">
+                                <span class="status-badge status-active">
+                                    Ativo
+                                </span>
+                            </td>
+                            <td class="px-4 py-3 text-sm text-right">
+                                <div class="flex justify-end space-x-2">
+                                    <button class="text-blue-400 hover:text-blue-300" aria-label="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-400 hover:text-red-300" aria-label="Excluir">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr></tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- Loading Skeleton -->
+                        <div id="loading-skeleton" class="hidden">
+                            <div class="skeleton h-12 rounded-md my-2 w-full"></div>
+                            <div class="skeleton h-12 rounded-md my-2 w-full"></div>
+                            <div class="skeleton h-12 rounded-md my-2 w-full"></div>
+                        </div>
+                        
+                        <!-- Empty State -->
+                        <div id="empty-state" class="hidden py-8 text-center">
+                            <div class="text-gray-400 text-lg">
+                                <i class="fas fa-search mb-3 text-3xl"></i>
+                                <p>Nenhum usuário encontrado</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <div class="flex justify-between items-center mt-6 flex-col sm:flex-row space-y-4 sm:space-y-0">
+                            <div class="text-sm text-gray-400">
+                                Mostrando <span id="showing-start">1</span> a <span id="showing-end">10</span> de <span id="total-items">50</span> registros
+                            </div>
+                            
+                            <div class="flex space-x-1">
+                                <button class="pagination-item w-8 h-8 flex items-center justify-center rounded-md text-gray-400 hover:text-white" aria-label="Primeira página">
+                                    <i class="fas fa-angle-double-left"></i>
+                                </button>
+                                <button class="pagination-item w-8 h-8 flex items-center justify-center rounded-md text-gray-400 hover:text-white" aria-label="Página anterior">
+                                    <i class="fas fa-angle-left"></i>
+                                </button>
+                                <button class="pagination-item w-8 h-8 flex items-center justify-center rounded-md active">1</button>
+                                <button class="pagination-item w-8 h-8 flex items-center justify-center rounded-md text-gray-400 hover:text-white">2</button>
+                                <button class="pagination-item w-8 h-8 flex items-center justify-center rounded-md text-gray-400 hover:text-white">3</button>
+                                <button class="pagination-item w-8 h-8 flex items-center justify-center rounded-md text-gray-400 hover:text-white">4</button>
+                                <button class="pagination-item w-8 h-8 flex items-center justify-center rounded-md text-gray-400 hover:text-white">5</button>
+                                <button class="pagination-item w-8 h-8 flex items-center justify-center rounded-md text-gray-400 hover:text-white" aria-label="Próxima página">
+                                    <i class="fas fa-angle-right"></i>
+                                </button>
+                                <button class="pagination-item w-8 h-8 flex items-center justify-center rounded-md text-gray-400 hover:text-white" aria-label="Última página">
+                                    <i class="fas fa-angle-double-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        
+        <!-- Toast Notification -->
+        <div id="toast" class="toast">
+            <div class="flex items-center">
+                <i class="fas fa-check-circle mr-2"></i>
+                <span id="toast-message">Operação realizada com sucesso!</span>
+            </div>
+        </div>
+        
+        <!-- Modal - Add User -->
+        <div id="add-user-modal" class="modal">
+            <div class="modal-content p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold">Adicionar Novo Usuário</h3>
+                    <button id="close-modal" class="text-gray-400 hover:text-white">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <form id="add-user-form">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-400 mb-1">Nome</label>
+                            <input type="text" id="name" class="search-input w-full py-2 px-3 rounded-md text-white" required="">
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-400 mb-1">Serviço</label>
+                            <select id="service" class="search-input w-full py-2 px-3 rounded-md text-white" required="">
+                                <option value="">Selecione</option>
+                                <option value="Procon">Procon</option>
+                                <option value="Saúde">Saúde</option>
+                                <option value="Educação">Educação</option>
+                                <option value="Meio Ambiente">Meio Ambiente</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-400 mb-1">Número</label>
+                            <input type="tel" id="phone" class="search-input w-full py-2 px-3 rounded-md text-white" required="">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-400 mb-1">Email</label>
+                            <input type="email" id="email" class="search-input w-full py-2 px-3 rounded-md text-white" required="">
+                        </div>
+                        
+                        <div>
+                            <label for="neighborhood" class="block text-sm font-medium text-gray-400 mb-1">Bairro</label>
+                            <input type="text" id="neighborhood" class="search-input w-full py-2 px-3 rounded-md text-white" required="">
+                        </div>
+                        
+                        <div>
+                            <label for="status" class="block text-sm font-medium text-gray-400 mb-1">Status</label>
+                            <select id="status" class="search-input w-full py-2 px-3 rounded-md text-white" required="">
+                                <option value="active">Ativo</option>
+                                <option value="inactive">Inativo</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-end space-x-3 mt-6">
+                        <button type="button" id="cancel-add-user" class="px-4 py-2 border border-gray-600 rounded-md text-gray-300 hover:bg-gray-700 transition-colors">
+                            Cancelar
+                        </button>
+                        <button type="submit" class="btn-primary px-4 py-2 rounded-md">
+                            Adicionar Usuário
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+       
+    <script src="script.js"></script>
+</body>
+</html>

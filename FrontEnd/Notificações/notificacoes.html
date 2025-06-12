@@ -1,0 +1,533 @@
+<html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificações - IntegraAju</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+   
+
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"></path>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold text-gray-800">IntegraAju</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Início
+                        </a>
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Serviços
+                        </a>
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Agendamentos
+                        </a>
+                        <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                            Documentos
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button type="button" class="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary relative badge">
+                        <span class="sr-only">Ver notificações</span>
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <div class="ml-3 relative">
+                        <div>
+                            <button type="button" class="bg-white flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" id="user-menu-button">
+                                <span class="sr-only">Abrir menu do usuário</span>
+                                <div class="h-8 w-8 rounded-full bg-primary flex items-center justify-center text-white">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary" id="mobile-menu-button">
+                        <span class="sr-only">Abrir menu principal</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#" class="bg-white text-gray-500 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
+                    Início
+                </a>
+                <a href="#" class="bg-white text-gray-500 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
+                    Serviços
+                </a>
+                <a href="#" class="bg-white text-gray-500 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
+                    Agendamentos
+                </a>
+                <a href="#" class="bg-white text-gray-500 block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
+                    Documentos
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Header -->
+        <div class="mb-8">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-800">Notificações</h1>
+                    <p class="mt-1 text-gray-600">Acompanhe suas atualizações e alertas</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-sm text-gray-600">5 não lidas</span>
+                    <div class="h-6 w-6 rounded-full bg-primary-light flex items-center justify-center text-white text-sm">
+                        5
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Filters and Actions -->
+        <div class="bg-white rounded-xl shadow-sm p-4 mb-6">
+            <div class="flex justify-between items-center filter-section">
+                <div class="flex flex-wrap gap-2 md:gap-4">
+                    <button id="filter-toggle" class="px-4 py-2 bg-gray-100 rounded-lg text-gray-700 hover:bg-gray-200 flex items-center md:hidden">
+                        <i class="fas fa-filter mr-2"></i>
+                        Filtros
+                    </button>
+                    
+                    <!-- Filter by Type -->
+                    <div class="relative hidden md:block">
+                        <select class="form-select rounded-lg border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 text-sm">
+                            <option value="">Todos os tipos</option>
+                            <option value="appointment">Agendamento</option>
+                            <option value="document">Documentos</option>
+                            <option value="alert">Alertas</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Filter by Date -->
+                    <div class="relative hidden md:block">
+                        <select class="form-select rounded-lg border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 text-sm">
+                            <option value="">Todas as datas</option>
+                            <option value="today">Hoje</option>
+                            <option value="week">Esta semana</option>
+                            <option value="month">Este mês</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Filter by Status -->
+                    <div class="relative hidden md:block">
+                        <select class="form-select rounded-lg border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 text-sm">
+                            <option value="">Todos os status</option>
+                            <option value="unread">Não lidas</option>
+                            <option value="read">Lidas</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-2 filter-buttons">
+                    <button class="px-3 py-2 text-sm text-primary hover:text-primary-dark focus:outline-none focus:underline">
+                        <i class="fas fa-check-double mr-1"></i>
+                        Marcar todas como lidas
+                    </button>
+                    <button class="px-3 py-2 text-sm text-gray-600 hover:text-gray-800 focus:outline-none focus:underline">
+                        <i class="fas fa-trash-alt mr-1"></i>
+                        Excluir antigas
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Filters (Collapsible) -->
+            <div class="filter-dropdown md:hidden" id="mobile-filters">
+                <div class="pt-4 space-y-3">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Tipo de notificação</label>
+                        <select class="form-select w-full rounded-lg border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 text-sm">
+                            <option value="">Todos os tipos</option>
+                            <option value="appointment">Agendamento</option>
+                            <option value="document">Documentos</option>
+                            <option value="alert">Alertas</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Data</label>
+                        <select class="form-select w-full rounded-lg border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 text-sm">
+                            <option value="">Todas as datas</option>
+                            <option value="today">Hoje</option>
+                            <option value="week">Esta semana</option>
+                            <option value="month">Este mês</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                        <select class="form-select w-full rounded-lg border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 text-sm">
+                            <option value="">Todos os status</option>
+                            <option value="unread">Não lidas</option>
+                            <option value="read">Lidas</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Notifications List -->
+        <div class="space-y-4" id="notifications-container">
+            <!-- Notification 1 - Appointment (Unread) -->
+            <div class="notification-card unread bg-white rounded-xl shadow-sm p-4 cursor-pointer" data-id="1">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 rounded-full bg-primary-light bg-opacity-20 flex items-center justify-center text-primary">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4 flex-1">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-medium text-gray-800">Agendamento Confirmado</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-light bg-opacity-10 text-primary">
+                                Não lida
+                            </span>
+                        </div>
+                        <p class="mt-1 text-sm text-gray-600">Seu agendamento para emissão de documento foi confirmado para 15/06/2023 às 14:30.</p>
+                        <div class="mt-2 flex items-center justify-between">
+                            <span class="text-xs text-gray-500">
+                                <i class="far fa-clock mr-1"></i>
+                                Hoje, 09:45
+                            </span>
+                            <button class="text-sm text-secondary hover:text-secondary-dark focus:outline-none focus:underline view-details-btn">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notification 2 - Document (Unread) -->
+            <div class="notification-card unread bg-white rounded-xl shadow-sm p-4 cursor-pointer" data-id="2">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 rounded-full bg-secondary-light bg-opacity-20 flex items-center justify-center text-secondary">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4 flex-1">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-medium text-gray-800">Documento Disponível</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-light bg-opacity-10 text-primary">
+                                Não lida
+                            </span>
+                        </div>
+                        <p class="mt-1 text-sm text-gray-600">Seu documento solicitado está disponível para download. Acesse a área de documentos para visualizar.</p>
+                        <div class="mt-2 flex items-center justify-between">
+                            <span class="text-xs text-gray-500">
+                                <i class="far fa-clock mr-1"></i>
+                                Hoje, 08:30
+                            </span>
+                            <button class="text-sm text-secondary hover:text-secondary-dark focus:outline-none focus:underline view-details-btn">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notification 3 - Alert (Unread) -->
+            <div class="notification-card unread bg-white rounded-xl shadow-sm p-4 cursor-pointer" data-id="3">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4 flex-1">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-medium text-gray-800">Alerta de Manutenção</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-light bg-opacity-10 text-primary">
+                                Não lida
+                            </span>
+                        </div>
+                        <p class="mt-1 text-sm text-gray-600">O sistema estará em manutenção no dia 18/06/2023 das 23:00 às 05:00. Planeje-se!</p>
+                        <div class="mt-2 flex items-center justify-between">
+                            <span class="text-xs text-gray-500">
+                                <i class="far fa-clock mr-1"></i>
+                                Ontem, 17:20
+                            </span>
+                            <button class="text-sm text-secondary hover:text-secondary-dark focus:outline-none focus:underline view-details-btn">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notification 4 - Appointment (Unread) -->
+            <div class="notification-card unread bg-white rounded-xl shadow-sm p-4 cursor-pointer" data-id="4">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 rounded-full bg-primary-light bg-opacity-20 flex items-center justify-center text-primary">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4 flex-1">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-medium text-gray-800">Lembrete de Agendamento</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-light bg-opacity-10 text-primary">
+                                Não lida
+                            </span>
+                        </div>
+                        <p class="mt-1 text-sm text-gray-600">Seu agendamento para renovação de licença está marcado para amanhã às 10:00. Não esqueça seus documentos!</p>
+                        <div class="mt-2 flex items-center justify-between">
+                            <span class="text-xs text-gray-500">
+                                <i class="far fa-clock mr-1"></i>
+                                Ontem, 14:15
+                            </span>
+                            <button class="text-sm text-secondary hover:text-secondary-dark focus:outline-none focus:underline view-details-btn">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notification 5 - Document (Unread) -->
+            <div class="notification-card unread bg-white rounded-xl shadow-sm p-4 cursor-pointer" data-id="5">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 rounded-full bg-secondary-light bg-opacity-20 flex items-center justify-center text-secondary">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4 flex-1">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-medium text-gray-800">Documento Expirado</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-light bg-opacity-10 text-primary">
+                                Não lida
+                            </span>
+                        </div>
+                        <p class="mt-1 text-sm text-gray-600">Seu certificado digital expira em 7 dias. Acesse a área de documentos para renovar.</p>
+                        <div class="mt-2 flex items-center justify-between">
+                            <span class="text-xs text-gray-500">
+                                <i class="far fa-clock mr-1"></i>
+                                12/06/2023, 10:30
+                            </span>
+                            <button class="text-sm text-secondary hover:text-secondary-dark focus:outline-none focus:underline view-details-btn">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notification 6 - Alert (Read) -->
+            <div class="notification-card read bg-white rounded-xl shadow-sm p-4 cursor-pointer" data-id="6">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4 flex-1">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-medium text-gray-800">Novo Serviço Disponível</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+                                Lida
+                            </span>
+                        </div>
+                        <p class="mt-1 text-sm text-gray-600">Um novo serviço de emissão de certidões online foi adicionado à plataforma. Confira!</p>
+                        <div class="mt-2 flex items-center justify-between">
+                            <span class="text-xs text-gray-500">
+                                <i class="far fa-clock mr-1"></i>
+                                10/06/2023, 09:15
+                            </span>
+                            <button class="text-sm text-secondary hover:text-secondary-dark focus:outline-none focus:underline view-details-btn">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notification 7 - Document (Read) -->
+            <div class="notification-card read bg-white rounded-xl shadow-sm p-4 cursor-pointer" data-id="7">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 rounded-full bg-secondary-light bg-opacity-20 flex items-center justify-center text-secondary">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4 flex-1">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-medium text-gray-800">Documento Aprovado</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600">
+                                Lida
+                            </span>
+                        </div>
+                        <p class="mt-1 text-sm text-gray-600">Sua solicitação de alvará foi aprovada. O documento está disponível para download.</p>
+                        <div class="mt-2 flex items-center justify-between">
+                            <span class="text-xs text-gray-500">
+                                <i class="far fa-clock mr-1"></i>
+                                05/06/2023, 14:20
+                            </span>
+                            <button class="text-sm text-secondary hover:text-secondary-dark focus:outline-none focus:underline view-details-btn">
+                                Ver detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Empty State (Hidden by default) -->
+        <div class="hidden flex flex-col items-center justify-center py-12" id="empty-state">
+            <div class="w-48 h-48">
+                <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 570 511.67482" class="text-primary-light">
+                    <path d="M879.99927,389.83741a.99678.99678,0,0,1-.5708-.1792L602.86963,197.05469a5.01548,5.01548,0,0,0-5.72852.00977L322.57434,389.65626a1.00019,1.00019,0,1,1-1.14868-1.6377l274.567-192.5918a7.02216,7.02216,0,0,1,8.02-.01318l276.55883,192.603a1.00019,1.00019,0,0,1-.57226,1.8208Z" transform="translate(-315 -194.16259)" fill="#3f3d56"></path><polygon points="23.264 202.502 285.276 8.319 549.276 216.319 298.776 364.819 162.776 333.819 23.264 202.502" fill="#e6e6e6"></polygon><path d="M489.25553,650.70367H359.81522a6.04737,6.04737,0,1,1,0-12.09473H489.25553a6.04737,6.04737,0,1,1,0,12.09473Z" transform="translate(-315 -194.16259)" fill="#7C3AED"></path><path d="M406.25553,624.70367H359.81522a6.04737,6.04737,0,1,1,0-12.09473h46.44031a6.04737,6.04737,0,1,1,0,12.09473Z" transform="translate(-315 -194.16259)" fill="#7C3AED"></path><path d="M603.96016,504.82207a7.56366,7.56366,0,0,1-2.86914-.562L439.5002,437.21123v-209.874a7.00817,7.00817,0,0,1,7-7h310a7.00818,7.00818,0,0,1,7,7v210.0205l-.30371.12989L606.91622,504.22734A7.61624,7.61624,0,0,1,603.96016,504.82207Z" transform="translate(-315 -194.16259)" fill="#fff"></path><path d="M603.96016,505.32158a8.07177,8.07177,0,0,1-3.05957-.59863L439.0002,437.54521v-210.208a7.50851,7.50851,0,0,1,7.5-7.5h310a7.50851,7.50851,0,0,1,7.5,7.5V437.68779l-156.8877,66.999A8.10957,8.10957,0,0,1,603.96016,505.32158Zm-162.96-69.1123,160.66309,66.66455a6.1182,6.1182,0,0,0,4.668-.02784l155.669-66.47851V227.33721a5.50653,5.50653,0,0,0-5.5-5.5h-310a5.50653,5.50653,0,0,0-5.5,5.5Z" transform="translate(-315 -194.16259)" fill="#3f3d56"></path><path d="M878,387.83741h-.2002L763,436.85743l-157.06982,67.07a5.06614,5.06614,0,0,1-3.88038.02L440,436.71741l-117.62012-48.8-.17968-.08H322a7.00778,7.00778,0,0,0-7,7v304a7.00779,7.00779,0,0,0,7,7H878a7.00779,7.00779,0,0,0,7-7v-304A7.00778,7.00778,0,0,0,878,387.83741Z" transform="translate(-315 -194.16259)" fill="#7C3AED"></path><path d="M878,705.83741H322a7.00779,7.00779,0,0,1-7-7v-304a7.00778,7.00778,0,0,1,7-7h1l117.62012,48.8a1.00308,1.00308,0,0,1,.23.11005l161.98,67.49a7.0735,7.0735,0,0,0,5.42041-.03l157.37988-67.16,114.58984-48.76a1.00241,1.00241,0,0,1,.24024-.1001H878a7.00778,7.00778,0,0,1,7,7v304A7.00779,7.00779,0,0,1,878,705.83741Z" transform="translate(-315 -194.16259)" fill="#3B82F6"></path><path d="M733.34508,445.93848a2.19825,2.19825,0,0,1-.64453-.09717l-65.55566-20.19726a1.99983,1.99983,0,0,1,0-3.80127l65.55566-20.19776a2.00017,2.00017,0,1,1,1.28906,3.793L674.16,425.83692l59.83008,18.40772a2,2,0,0,1-.64453,3.89384Z" transform="translate(-315 -194.16259)" fill="#fff"></path><path d="M802.05859,398.5a2.00006,2.00006,0,0,1-1.15722-3.63818l32.0166-22.7041a2.00024,2.00024,0,0,1,2.31445,3.27636l-32.0166,22.7041A1.99632,1.99632,0,0,1,802.05859,398.5Z" transform="translate(-315 -194.16259)" fill="#fff"></path>
+                </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-medium text-gray-800">Nenhuma notificação</h3>
+            <p class="mt-2 text-gray-600 text-center max-w-sm">
+                Você não tem notificações no momento. Quando houver novidades, elas aparecerão aqui.
+            </p>
+            <button class="mt-6 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                Atualizar
+            </button>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="mt-8 flex items-center justify-between">
+            <div class="flex-1 flex justify-between sm:hidden">
+                <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                    Anterior
+                </a>
+                <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                    Próxima
+                </a>
+            </div>
+            <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                <div>
+                    <p class="text-sm text-gray-700">
+                        Mostrando
+                        <span class="font-medium">1</span>
+                        a
+                        <span class="font-medium">7</span>
+                        de
+                        <span class="font-medium">12</span>
+                        resultados
+                    </p>
+                </div>
+                <div>
+                    <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                        <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Anterior</span>
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        <a href="#" aria-current="page" class="z-10 bg-primary text-white relative inline-flex items-center px-4 py-2 border border-primary text-sm font-medium">
+                            1
+                        </a>
+                        <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                            2
+                        </a>
+                        <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                            3
+                        </a>
+                        <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Próxima</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Notification Detail Modal -->
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50 hidden" id="notification-modal">
+        <div class="bg-white rounded-xl shadow-xl max-w-lg w-full mx-4 animate-fadeIn">
+            <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+                <h3 class="text-lg font-medium text-gray-800" id="modal-title">Detalhes da Notificação</h3>
+                <button class="text-gray-400 hover:text-gray-500 focus:outline-none" id="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="px-6 py-4" id="modal-content">
+                <div class="flex items-center mb-4">
+                    <div id="modal-icon" class="w-10 h-10 rounded-full bg-primary-light bg-opacity-20 flex items-center justify-center text-primary">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="ml-3">
+                        <h4 class="font-medium text-gray-800" id="modal-subtitle">Agendamento Confirmado</h4>
+                        <p class="text-sm text-gray-500" id="modal-date">Hoje, 09:45</p>
+                    </div>
+                </div>
+                <div class="prose prose-sm max-w-none" id="modal-description">
+                    <p>Seu agendamento para emissão de documento foi confirmado para 15/06/2023 às 14:30.</p>
+                    <p class="mt-2">Local: Unidade Central - Av. Principal, 1000</p>
+                    <p class="mt-2">Documentos necessários:</p>
+                    <ul>
+                        <li>Documento de identidade com foto</li>
+                        <li>CPF</li>
+                        <li>Comprovante de residência</li>
+                    </ul>
+                    <p class="mt-2">Observações:</p>
+                    <p>Chegue com 15 minutos de antecedência. Em caso de impossibilidade de comparecimento, cancele com pelo menos 24h de antecedência.</p>
+                </div>
+            </div>
+            <div class="px-6 py-4 border-t border-gray-200 flex justify-between">
+                <button class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    Excluir
+                </button>
+                <div class="flex space-x-3">
+                    <button class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-secondary hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary" id="action-button">
+                        Ver agendamento
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex justify-center md:justify-start space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Sobre</span>
+                        Sobre
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Ajuda</span>
+                        Ajuda
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Privacidade</span>
+                        Privacidade
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Termos</span>
+                        Termos
+                    </a>
+                </div>
+                <p class="mt-8 text-center md:mt-0 text-sm text-gray-500">
+                    © 2023 IntegraAju. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+   <script src="script.js"></script>
+
+</body>
+</html>
