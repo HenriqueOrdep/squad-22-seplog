@@ -1,5 +1,5 @@
 
-# 🛠 Guia de Implantação do Projeto **IntegrAju**
+#  Guia de Implantação do Projeto **IntegrAju**
 
 Este guia fornece todas as instruções necessárias para implantar e testar o projeto **IntegrAju**, desde a clonagem até a execução e testes completos via Swagger.
 
@@ -49,7 +49,7 @@ spring.jpa.hibernate.ddl-auto=update
 spring.sql.init.mode=always
 ```
 
-> 🔁 O projeto aplica automaticamente os dados iniciais (`data.sql`), criando setores e serviços prontos para uso.
+>  O projeto aplica automaticamente os dados iniciais (`data.sql`), criando setores e serviços prontos para uso.
 
 ---
 
@@ -62,7 +62,7 @@ mvn spring-boot:run
 ```
 
 Acesse a aplicação em:  
-🔗 `http://localhost:8080`
+ `http://localhost:8080`
 
 > ℹ Um **analista padrão** será criado automaticamente:
 > - **Email:** `analista@seplog`
@@ -74,8 +74,8 @@ Acesse a aplicação em:
 
 O frontend é um HTML estático. Você pode:
 
-- ✅ Abrir diretamente o arquivo `frontend/index.html`
-- ✅ Ou usar o plugin **Live Server** do VS Code
+-  Abrir diretamente o arquivo `frontend/index.html`
+-  Ou usar o plugin **Live Server** do VS Code
 
 ---
 
@@ -102,7 +102,7 @@ Authorization: Bearer <seu-token>
 
 A API está documentada e testável via Swagger:
 
-🔗 [`http://localhost:8080/swagger-ui.html`](http://localhost:8080/swagger-ui.html)
+ [`http://localhost:8080/swagger-ui.html`](http://localhost:8080/swagger-ui.html)
 
 ---
 
@@ -136,7 +136,7 @@ POST /api/usuarios/cadastro
 
 ---
 
-### 🔹 Login de Usuário
+###  Login de Usuário
 
 ```http
 POST /api/usuarios/login
