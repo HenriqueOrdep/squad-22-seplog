@@ -68,7 +68,7 @@ public class UsuarioService {
         usuarioRepository.deleteById(id);
     }
 
-    public void autenticarCidadao(String login, String senha) {
+    public Usuario autenticarCidadao(String login, String senha) {
         Usuario usuario = usuarioRepository.findByEmail(login)
                 .or(() -> usuarioRepository.findByCpfOuCnpj(login))
                 .orElseThrow(() -> new BadCredentialsException("Usuário não encontrado"));
@@ -76,6 +76,8 @@ public class UsuarioService {
         if (!passwordEncoder.matches(senha, usuario.getSenha())) {
             throw new BadCredentialsException("Senha inválida");
         }
+
+        return usuario;
     }
 
     public Usuario buscarPorEmail(String email) {

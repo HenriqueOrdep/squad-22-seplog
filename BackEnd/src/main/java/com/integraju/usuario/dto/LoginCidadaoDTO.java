@@ -13,7 +13,7 @@ import lombok.AllArgsConstructor;
 public class LoginCidadaoDTO {
 
     @NotBlank(message = "Login (CPF ou e-mail) é obrigatório")
-    private String login;
+    private String Login;
 
     @NotBlank(message = "A senha é obrigatória")
     private String senha;
