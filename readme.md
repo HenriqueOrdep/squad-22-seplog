@@ -196,5 +196,5 @@ Para funcionar corretamente, certifique-se de que:
 
 Para dúvidas ou suporte:
 
-- [Pedro Henrique, desenvolvedor principal)](https://github.com/HenriqueOrdep)
-- [Luiz Henrique desenvolvedor front e designer)](https://github.com/Lhzinxx)
+- [Pedro Henrique, desenvolvedor principal](https://github.com/HenriqueOrdep)
+- [Luiz Henrique, desenvolvedor front e designer)](https://github.com/Lhzinxx)
